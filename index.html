@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TripTales helps travelers discover and plan smarter journeys across Jammu and Kashmir." />
+  <title>TripTales | Discover Jammu & Kashmir</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: "#040b14",
+            surface: "#0c1626",
+            soft: "#112036",
+            accent: "#14b8a6",
+            brand: "#0ea5e9"
+          },
+          boxShadow: {
+            glass: "0 20px 45px rgba(2, 12, 27, 0.35)"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <header id="siteHeader" class="fixed top-0 left-0 z-50 w-full border-b border-slate-200/80 bg-white/85 shadow-sm backdrop-blur-xl">
+    <nav class="mx-auto flex w-[92%] max-w-7xl items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" class="h-10 w-10 object-contain" />
+        <span class="text-lg font-semibold tracking-wide text-slate-900">TripTales</span>
+      </a>
+
+      <button id="menuToggle" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 text-slate-700 md:hidden" aria-label="Toggle menu" aria-expanded="false">
+        <span class="text-xl leading-none">&#9776;</span>
+      </button>
+
+      <ul id="navLinks" class="absolute left-4 right-4 top-full hidden flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-4 text-sm shadow-lg md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0 md:text-base md:shadow-none">
+        <li><a class="text-slate-900 transition hover:text-accent" href="index.html">Home</a></li>
+        <li><a class="text-slate-600 transition hover:text-accent" href="explore.html">Explore</a></li>
+        <li><a class="text-slate-600 transition hover:text-accent" href="about.html">About</a></li>
+        <li><a class="text-slate-600 transition hover:text-accent" href="admin.html">Admin</a></li>
+        <li><a class="text-slate-600 transition hover:text-accent" href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative min-h-screen overflow-hidden">
+      <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
+        <source src="images/WhatsApp%20Video%202026-02-16%20at%2012.47.56%20PM.mp4" type="video/mp4" />
+        <source src="images/WhatsApp%20Video%202026-02-06%20at%203.58.07%20PM.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/65"></div>
+      <div class="relative mx-auto flex min-h-screen w-[92%] max-w-7xl items-center justify-center py-28">
+        <div class="w-full max-w-4xl rounded-3xl border border-slate-200 bg-white/10 p-8 text-center backdrop-blur-xl shadow-glass md:p-12">
+          <p class="text-xs uppercase tracking-[0.25em] text-teal-200">Jammu & Kashmir Tourism</p>
+          <h1 class="mt-4 text-4xl font-semibold leading-tight text-white md:text-6xl">Plan smarter. Travel better.</h1>
+          <p class="mx-auto mt-4 max-w-2xl text-base text-slate-200 md:text-xl">Discover Jammu & Kashmir</p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="explore.html" class="rounded-xl bg-accent px-6 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-teal-300">Explore Trips</a>
+            <a href="create-itinerary.html" class="rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/20">Plan Your Trip</a>
+          </div>
+          <div class="mx-auto mt-8 flex w-full max-w-2xl flex-col gap-3 rounded-2xl border border-white/40 bg-white/85 p-3 shadow-lg backdrop-blur md:flex-row">
+            <input id="homeSearchInput" type="text" placeholder="Search itineraries, routes, or experiences" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder:text-slate-500 focus:border-brand focus:outline-none" />
+            <button id="homeSearchBtn" type="button" class="rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-400">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl py-20">
+      <div class="text-center">
+        <h2 class="text-3xl font-semibold md:text-4xl">Why Choose TripTales</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-slate-600">Powerful tools and local insight to build practical Jammu & Kashmir journeys.</p>
+      </div>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-7 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/10">
+          <div class="text-3xl font-bold text-teal-600">01</div>
+          <h3 class="mt-5 text-xl font-semibold">Smart Itinerary Planning</h3>
+          <p class="mt-3 text-slate-600">Community-powered travel plans designed by real travelers.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-7 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/10">
+          <div class="text-3xl font-bold text-sky-600">02</div>
+          <h3 class="mt-5 text-xl font-semibold">Local Experiences</h3>
+          <p class="mt-3 text-slate-600">Discover hidden gems across Kashmir & Jammu.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-7 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/10">
+          <div class="text-3xl font-bold text-indigo-600">03</div>
+          <h3 class="mt-5 text-xl font-semibold">Verified Guides</h3>
+          <p class="mt-3 text-slate-600">Trusted local partners and authentic experiences.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl py-8">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="text-3xl font-semibold md:text-4xl">Trending Destinations</h2>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200">
+          <img src="images/1.1.jpg.jpeg" alt="Srinagar" class="h-64 w-full object-cover transition duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-5">
+            <h3 class="text-xl font-semibold">Srinagar</h3>
+            <p class="mt-1 text-sm text-slate-200">Houseboats, Mughal gardens, and vibrant lakefront culture.</p>
+          </div>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200">
+          <img src="images/1.2.jpg.jpeg" alt="Gulmarg" class="h-64 w-full object-cover transition duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-5">
+            <h3 class="text-xl font-semibold">Gulmarg</h3>
+            <p class="mt-1 text-sm text-slate-200">Snow adventures, gondola views, and alpine charm.</p>
+          </div>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200">
+          <img src="images/2.3.jpg.jpeg" alt="Pahalgam" class="h-64 w-full object-cover transition duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-5">
+            <h3 class="text-xl font-semibold">Pahalgam</h3>
+            <p class="mt-1 text-sm text-slate-200">River valleys, forest trails, and peaceful stays.</p>
+          </div>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200">
+          <img src="images/1.3.jpg.jpeg" alt="Sonamarg" class="h-64 w-full object-cover transition duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-5">
+            <h3 class="text-xl font-semibold">Sonamarg</h3>
+            <p class="mt-1 text-sm text-slate-200">Golden meadows, glaciers, and dramatic mountain routes.</p>
+          </div>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200">
+          <img src="images/3.1.jpg.jpeg" alt="Jammu" class="h-64 w-full object-cover transition duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-5">
+            <h3 class="text-xl font-semibold">Jammu</h3>
+            <p class="mt-1 text-sm text-slate-200">Temples, heritage corridors, and cultural trails.</p>
+          </div>
+        </article>
+        <article class="group relative overflow-hidden rounded-2xl border border-slate-200">
+          <img src="images/3.2.jpg.jpeg" alt="Patnitop" class="h-64 w-full object-cover transition duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 p-5">
+            <h3 class="text-xl font-semibold">Patnitop</h3>
+            <p class="mt-1 text-sm text-slate-200">Quick hill escapes with scenic viewpoints and fresh air.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl py-20">
+      <h2 class="text-3xl font-semibold md:text-4xl">Types of Tourism</h2>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Adventure Tourism</h3>
+          <p class="mt-2 text-sm text-slate-600">Treks, skiing, rafting, and high-altitude circuits.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Spiritual Tourism</h3>
+          <p class="mt-2 text-sm text-slate-600">Sacred routes and pilgrimage-focused plans.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Honeymoon Trips</h3>
+          <p class="mt-2 text-sm text-slate-600">Romantic stays, private experiences, and scenic escapes.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Family Trips</h3>
+          <p class="mt-2 text-sm text-slate-600">Comfort-focused routes and family-friendly activities.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Luxury Travel</h3>
+          <p class="mt-2 text-sm text-slate-600">Premium stays, curated transfers, and concierge plans.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Budget Travel</h3>
+          <p class="mt-2 text-sm text-slate-600">Affordable, practical itineraries without missing highlights.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 class="text-lg font-semibold">Winter Tourism</h3>
+          <p class="mt-2 text-sm text-slate-600">Snow destinations, winter sports, and seasonal routes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bg-slate-100 py-20">
+      <div class="mx-auto grid w-[92%] max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 text-center">
+          <p class="text-4xl font-semibold text-accent" data-counter="1000">0</p>
+          <p class="mt-2 text-slate-600">Travelers Served</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 text-center">
+          <p class="text-4xl font-semibold text-accent" data-counter="150">0</p>
+          <p class="mt-2 text-slate-600">Itineraries</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 text-center">
+          <p class="text-4xl font-semibold text-accent" data-counter="50">0</p>
+          <p class="mt-2 text-slate-600">Local Partners</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 text-center">
+          <p class="text-4xl font-semibold text-accent" data-counter="48">0</p>
+          <p class="mt-2 text-slate-600">Average Rating (4.8&#9733;)</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl py-20">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="text-3xl font-semibold md:text-4xl">Featured Itineraries</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <img src="images/1.1.jpg.jpeg" alt="Kashmir Budget Explorer" class="h-52 w-full object-cover" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Kashmir Budget Explorer</h3>
+            <p class="mt-2 text-sm text-slate-600">Duration: 5 Days</p>
+            <p class="text-sm text-slate-600">Budget: INR 18,000 - 22,000</p>
+            <p class="text-sm text-slate-600">Type: Budget Traveler</p>
+            <p class="mt-2 text-sm text-teal-300">Upvotes: 18</p>
+            <a href="itinerary-details.html?itinerary=kashmir-budget" class="mt-4 inline-block rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-400">View Details</a>
+          </div>
+        </article>
+        <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <img src="images/2.1.jpg.jpeg" alt="Kashmir Luxury Couple Trip" class="h-52 w-full object-cover" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Kashmir Luxury Couple Trip</h3>
+            <p class="mt-2 text-sm text-slate-600">Duration: 3 Days</p>
+            <p class="text-sm text-slate-600">Budget: INR 35,000 - 45,000</p>
+            <p class="text-sm text-slate-600">Type: Luxury Couple Trip</p>
+            <p class="mt-2 text-sm text-teal-300">Upvotes: 22</p>
+            <a href="itinerary-details.html?itinerary=kashmir-luxury-couple" class="mt-4 inline-block rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-400">View Details</a>
+          </div>
+        </article>
+        <article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <img src="images/3.1.jpg.jpeg" alt="Jammu Pilgrimage Family Plan" class="h-52 w-full object-cover" />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold">Jammu Pilgrimage Family Plan</h3>
+            <p class="mt-2 text-sm text-slate-600">Duration: 4 Days</p>
+            <p class="text-sm text-slate-600">Budget: INR 9,000 - 12,000</p>
+            <p class="text-sm text-slate-600">Type: Pilgrimage + Family Trip</p>
+            <p class="mt-2 text-sm text-teal-300">Upvotes: 14</p>
+            <a href="itinerary-details.html?itinerary=jammu-pilgrimage-family" class="mt-4 inline-block rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-400">View Details</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl py-10">
+      <div class="relative overflow-hidden rounded-3xl border border-slate-200">
+        <img src="images/5.2.jpg.jpeg" alt="Plan your trip" class="h-80 w-full object-cover md:h-96" />
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute inset-0 flex flex-col items-start justify-center p-8 md:p-12">
+          <h2 class="max-w-2xl text-3xl font-semibold md:text-5xl">Plan Your Dream Kashmir Journey</h2>
+          <p class="mt-4 max-w-xl text-slate-200">Build, customize, and share your itinerary in minutes.</p>
+          <a href="create-itinerary.html" class="mt-7 rounded-xl bg-accent px-6 py-3 font-semibold text-slate-950 transition hover:bg-teal-300">Start Planning</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl py-20">
+      <h2 class="text-3xl font-semibold md:text-4xl">Testimonials</h2>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+          <img src="images/1.2.jpg.jpeg" alt="Traveler A" class="h-14 w-14 rounded-full object-cover" />
+          <h3 class="mt-4 text-lg font-semibold">Aarav Sharma</h3>
+          <p class="mt-2 text-slate-600">"TripTales made our Kashmir trip smooth and efficient from day one."</p>
+          <p class="mt-3 text-amber-300">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+          <img src="images/2.2.jpg.jpeg" alt="Traveler B" class="h-14 w-14 rounded-full object-cover" />
+          <h3 class="mt-4 text-lg font-semibold">Mehak Gupta</h3>
+          <p class="mt-2 text-slate-600">"The local recommendations were accurate and saved us a lot of planning time."</p>
+          <p class="mt-3 text-amber-300">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
+          <img src="images/3.3.jpg.jpeg" alt="Traveler C" class="h-14 w-14 rounded-full object-cover" />
+          <h3 class="mt-4 text-lg font-semibold">Ritwik Khan</h3>
+          <p class="mt-2 text-slate-600">"A clean itinerary experience with practical budgets and route choices."</p>
+          <p class="mt-3 text-amber-300">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto w-[92%] max-w-7xl pb-20">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 md:p-10 shadow-sm">
+        <h2 class="text-3xl font-semibold">Stay updated with new travel plans & deals</h2>
+        <form class="mt-6 flex flex-col gap-3 md:flex-row">
+          <input type="email" placeholder="Enter your email" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand focus:outline-none" />
+          <button type="submit" class="rounded-xl bg-brand px-6 py-3 font-semibold text-white transition hover:bg-sky-400">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-12">
+    <div class="mx-auto grid w-[92%] max-w-7xl gap-10 md:grid-cols-3">
+      <div>
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" class="h-10 w-10 object-contain" />
+          <span class="text-lg font-semibold text-slate-900">TripTales</span>
+        </a>
+        <p class="mt-4 text-sm text-slate-600">Premium itinerary planning for smarter travel across Jammu & Kashmir.</p>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Quick Links</h4>
+        <ul class="mt-4 space-y-2 text-slate-600">
+          <li><a href="index.html" class="hover:text-accent">Home</a></li>
+          <li><a href="explore.html" class="hover:text-accent">Explore</a></li>
+          <li><a href="about.html" class="hover:text-accent">About</a></li>
+          <li><a href="#" class="hover:text-accent">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-200">Connect</h4>
+        <p class="mt-4 text-slate-600">Instagram &middot; YouTube &middot; X</p>
+        <p class="mt-6 text-sm text-slate-500">Made for Jammu & Kashmir Tourism</p>
+      </div>
+    </div>
+    <p class="mt-10 text-center text-xs text-slate-500">&copy; 2026 TripTales. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var menuToggle = document.getElementById("menuToggle");
+      var navLinks = document.getElementById("navLinks");
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+          var open = navLinks.classList.toggle("hidden");
+          menuToggle.setAttribute("aria-expanded", open ? "false" : "true");
+        });
+      }
+
+      function animateCounter(el, target) {
+        var start = 0;
+        var duration = 1300;
+        var startTime = null;
+        function tick(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var value = Math.floor(start + (target - start) * progress);
+          if (target === 48) el.textContent = (value / 10).toFixed(1);
+          else el.textContent = new Intl.NumberFormat("en-IN").format(value) + "+";
+          if (progress < 1) window.requestAnimationFrame(tick);
+        }
+        window.requestAnimationFrame(tick);
+      }
+
+      var counters = document.querySelectorAll("[data-counter]");
+      if (!counters.length) return;
+      var hasAnimated = false;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || hasAnimated) return;
+          hasAnimated = true;
+          counters.forEach(function (counter) {
+            animateCounter(counter, Number(counter.getAttribute("data-counter") || 0));
+          });
+        });
+      }, { threshold: 0.35 });
+
+      observer.observe(counters[0]);
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

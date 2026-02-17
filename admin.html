@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TripTales admin panel for reviewing and managing itinerary submissions." />
+  <title>Admin | TripTales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a class="brand" href="index.html"><img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" /><span>TripTales</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="section-head reveal">
+      <h1>Admin Dashboard</h1>
+      <p>Review itinerary submissions and keep quality high across all published plans.</p>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="metric-card reveal"><h3>Pending Reviews</h3><p id="pendingCount">0</p></article>
+      <article class="metric-card reveal"><h3>Approved</h3><p id="approvedCount">0</p></article>
+      <article class="metric-card reveal"><h3>Rejected</h3><p id="rejectedCount">0</p></article>
+    </section>
+
+    <section class="table-wrap reveal">
+      <h2>Submitted Itineraries</h2>
+      <div class="auth-tabs" style="margin-bottom:14px;">
+        <button class="tab-btn active" id="adminTabNew" type="button">New Requests</button>
+        <button class="tab-btn" id="adminTabReviewed" type="button">Reviewed</button>
+      </div>
+
+      <div class="table-scroll" id="newRequestsWrap">
+        <table>
+          <thead>
+            <tr><th>Traveler</th><th>Route</th><th>Duration</th><th>Budget</th><th>Proof Check (5 km)</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="newRequestsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="table-scroll hidden" id="reviewedWrap">
+        <table>
+          <thead>
+            <tr><th>Traveler</th><th>Route</th><th>Duration</th><th>Budget</th><th>Proof Check (5 km)</th><th>Status</th><th>Reviewed</th></tr>
+          </thead>
+          <tbody id="reviewedBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

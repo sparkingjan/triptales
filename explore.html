@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore curated Jammu and Kashmir itineraries with TripTales." />
+  <title>Explore | TripTales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a class="brand" href="index.html"><img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" /><span>TripTales</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="explore-hero-card reveal">
+      <div>
+        <h1>Curated Jammu and Kashmir Routes</h1>
+        <p>Explore itineraries, compare plans, and use smart planning tools for better trip decisions.</p>
+      </div>
+      <div class="explore-metrics">
+        <article><strong>120+</strong><span>Verified routes</span></article>
+        <article><strong>4.8/5</strong><span>Traveler satisfaction</span></article>
+        <article><strong>24/7</strong><span>Planning support</span></article>
+      </div>
+    </section>
+
+    <section class="section-head reveal">
+      <h1>Explore Itineraries</h1>
+      <p>Compare ready itinerary ideas and pick the one that matches your time and budget.</p>
+    </section>
+
+    <section class="explore-filter reveal" id="exploreFilterBar">
+      <div class="explore-filter-field explore-filter-search">
+        <label for="filterSearch">Search</label>
+        <input id="filterSearch" type="text" placeholder="Search itineraries..." />
+      </div>
+
+      <div class="explore-filter-field explore-filter-budget">
+        <label>Budget Range</label>
+        <p class="explore-budget-value" id="filterBudgetValue">INR 5,000 - 1,50,000</p>
+        <div class="explore-range-wrap">
+          <div class="explore-range-track">
+            <span class="explore-range-fill" id="filterRangeFill"></span>
+          </div>
+          <input id="filterBudgetMin" type="range" min="5000" max="150000" step="1000" value="5000" />
+          <input id="filterBudgetMax" type="range" min="5000" max="150000" step="1000" value="150000" />
+        </div>
+      </div>
+
+      <div class="explore-filter-field">
+        <label for="filterDuration">Duration</label>
+        <select id="filterDuration">
+          <option value="all">All Durations</option>
+          <option value="1-3">1-3 Days</option>
+          <option value="4-6">4-6 Days</option>
+          <option value="7-10">7-10 Days</option>
+          <option value="10+">10+ Days</option>
+        </select>
+      </div>
+
+      <div class="explore-filter-field">
+        <label for="filterSeason">Season</label>
+        <select id="filterSeason">
+          <option value="all">All Season</option>
+          <option value="spring">Spring</option>
+          <option value="summer">Summer</option>
+          <option value="monsoon">Monsoon</option>
+          <option value="autumn">Autumn</option>
+          <option value="winter">Winter</option>
+          <option value="all-season">All Season</option>
+        </select>
+      </div>
+
+      <div class="explore-filter-field explore-type-filter" id="exploreTypeField">
+        <label>Tourism Type</label>
+        <button class="explore-type-toggle" id="filterTypeToggle" type="button">Select tourism types</button>
+        <div class="explore-type-menu" id="filterTypeMenu">
+          <label><input type="checkbox" value="adventure" />Adventure</label>
+          <label><input type="checkbox" value="family" />Family</label>
+          <label><input type="checkbox" value="honeymoon" />Honeymoon</label>
+          <label><input type="checkbox" value="pilgrimage" />Pilgrimage</label>
+          <label><input type="checkbox" value="cultural" />Cultural</label>
+          <label><input type="checkbox" value="wildlife" />Wildlife</label>
+          <label><input type="checkbox" value="luxury" />Luxury</label>
+          <label><input type="checkbox" value="budget" />Budget</label>
+          <label><input type="checkbox" value="solo-traveler" />Solo Traveler</label>
+          <label><input type="checkbox" value="photography" />Photography</label>
+        </div>
+      </div>
+
+      <div class="explore-filter-field">
+        <label for="filterDivision">Division / Region</label>
+        <select id="filterDivision">
+          <option value="all">All Divisions</option>
+          <option value="jammu">Jammu</option>
+          <option value="kashmir">Kashmir</option>
+          <option value="ladakh">Ladakh</option>
+        </select>
+      </div>
+
+      <div class="explore-filter-field">
+        <label for="filterSort">Sort By</label>
+        <select id="filterSort">
+          <option value="popular">Most Popular</option>
+          <option value="rated">Highest Rated</option>
+          <option value="budget-low">Lowest Budget</option>
+          <option value="budget-high">Highest Budget</option>
+          <option value="duration-short">Shortest Duration</option>
+          <option value="duration-long">Longest Duration</option>
+        </select>
+      </div>
+
+      <div class="explore-filter-actions">
+        <button class="btn btn-primary" id="filterResetBtn" type="button">Reset Filters</button>
+      </div>
+    </section>
+
+    <section class="explore-results-head reveal">
+      <p id="filterResultsCount">Showing all itineraries</p>
+    </section>
+
+    <div class="explore-layout">
+      <div class="explore-itineraries">
+    <section class="grid grid-3" id="itineraryGrid">
+      <article class="itinerary-card reveal">
+        <img src="images/1.1.jpg.jpeg" alt="Budget Kashmir itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Budget Explorer</h3>
+          <p>Duration: 5 Days</p>
+          <p>Budget: INR 18,000 - 22,000</p>
+          <p>Type: Budget Traveler</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-budget" data-itinerary="kashmir-budget">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/2.1.jpg.jpeg" alt="Luxury Kashmir couple trip itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Luxury Couple Trip</h3>
+          <p>Duration: 3 Days</p>
+          <p>Budget: INR 35,000 - 45,000</p>
+          <p>Type: Luxury Couple Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-luxury-couple" data-itinerary="kashmir-luxury-couple">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/3.1.jpg.jpeg" alt="Jammu pilgrimage family itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Jammu Pilgrimage Family Plan</h3>
+          <p>Duration: 4 Days</p>
+          <p>Budget: INR 9,000 - 12,000</p>
+          <p>Type: Pilgrimage + Family Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=jammu-pilgrimage-family" data-itinerary="jammu-pilgrimage-family">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/4.2.jpg.jpeg" alt="Jammu cultural and history itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Jammu Culture and History Trail</h3>
+          <p>Duration: 3 Days</p>
+          <p>Budget: INR 8,000 - 10,000</p>
+          <p>Type: Cultural and History</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=jammu-cultural-history" data-itinerary="jammu-cultural-history">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/5.1.jpg.jpeg" alt="Kashmir adventure itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Adventure Circuit</h3>
+          <p>Duration: 6 Days</p>
+          <p>Budget: INR 28,000 - 35,000</p>
+          <p>Type: Adventure Travelers</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-adventure" data-itinerary="kashmir-adventure">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/1.2.jpg.jpeg" alt="Gulmarg winter itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Gulmarg Winter Wonderland</h3>
+          <p>Duration: 4 Days</p>
+          <p>Budget: INR 16,000 - 24,000</p>
+          <p>Type: Snow & Winter Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=gulmarg-winter-wonderland" data-itinerary="gulmarg-winter-wonderland">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/1.3.jpg.jpeg" alt="Sonamarg scenic itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Sonamarg Alpine Escape</h3>
+          <p>Duration: 3 Days</p>
+          <p>Budget: INR 12,000 - 18,000</p>
+          <p>Type: Scenic Nature Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=sonamarg-alpine-escape" data-itinerary="sonamarg-alpine-escape">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/2.2.jpg.jpeg" alt="Solo backpacking Kashmir itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Solo Kashmir Backpack Plan</h3>
+          <p>Duration: 5 Days</p>
+          <p>Budget: INR 14,000 - 19,000</p>
+          <p>Type: Solo Budget Travel</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=solo-kashmir-backpack" data-itinerary="solo-kashmir-backpack">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/2.3.jpg.jpeg" alt="Kashmir honeymoon itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Romantic Kashmir Honeymoon</h3>
+          <p>Duration: 5 Days</p>
+          <p>Budget: INR 32,000 - 48,000</p>
+          <p>Type: Honeymoon / Couple</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=romantic-kashmir-honeymoon" data-itinerary="romantic-kashmir-honeymoon">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/3.2.jpg.jpeg" alt="Patnitop hill retreat itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Patnitop Hill Station Getaway</h3>
+          <p>Duration: 2 Days</p>
+          <p>Budget: INR 6,000 - 9,000</p>
+          <p>Type: Weekend Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=patnitop-hill-getaway" data-itinerary="patnitop-hill-getaway">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/3.3.jpg.jpeg" alt="Kashmir camping itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Camping Adventure</h3>
+          <p>Duration: 4 Days</p>
+          <p>Budget: INR 18,000 - 26,000</p>
+          <p>Type: Camping & Trekking</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-camping-adventure" data-itinerary="kashmir-camping-adventure">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/4.3.jpg.jpeg" alt="Amarnath pilgrimage itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Amarnath Pilgrimage Route Plan</h3>
+          <p>Duration: 5 Days</p>
+          <p>Budget: INR 12,000 - 18,000</p>
+          <p>Type: Pilgrimage</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=amarnath-pilgrimage-route" data-itinerary="amarnath-pilgrimage-route">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/5.2.jpg.jpeg" alt="Kashmir photography itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Photography Expedition</h3>
+          <p>Duration: 6 Days</p>
+          <p>Budget: INR 24,000 - 34,000</p>
+          <p>Type: Photography Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-photography-expedition" data-itinerary="kashmir-photography-expedition">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/5.3.jpg.jpeg" alt="Kashmir family vacation itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Family Comfort Trip</h3>
+          <p>Duration: 5 Days</p>
+          <p>Budget: INR 20,000 - 30,000</p>
+          <p>Type: Family Friendly</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-family-comfort" data-itinerary="kashmir-family-comfort">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/1.1.jpg.jpeg" alt="Self drive Kashmir itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Self-Drive Kashmir Circuit</h3>
+          <p>Duration: 6 Days</p>
+          <p>Budget: INR 22,000 - 32,000</p>
+          <p>Type: Road Trip</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=self-drive-kashmir-circuit" data-itinerary="self-drive-kashmir-circuit">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/2.1.jpg.jpeg" alt="Offbeat Kashmir itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Hidden Gems of Kashmir</h3>
+          <p>Duration: 5 Days</p>
+          <p>Budget: INR 17,000 - 25,000</p>
+          <p>Type: Offbeat Travel</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=hidden-gems-kashmir" data-itinerary="hidden-gems-kashmir">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/1.2.jpg.jpeg" alt="Kashmir spring tulip itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Tulip & Spring Tour</h3>
+          <p>Duration: 3 Days</p>
+          <p>Budget: INR 13,000 - 18,000</p>
+          <p>Type: Seasonal / Spring</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-tulip-spring" data-itinerary="kashmir-tulip-spring">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/1.3.jpg.jpeg" alt="Autumn Kashmir itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Autumn Valley Experience</h3>
+          <p>Duration: 4 Days</p>
+          <p>Budget: INR 15,000 - 22,000</p>
+          <p>Type: Seasonal / Autumn</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=autumn-valley-experience" data-itinerary="autumn-valley-experience">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/3.1.jpg.jpeg" alt="Kashmir rural tour itinerary" />
+        <div class="itinerary-card-content">
+          <h3>Kashmir Rural Life Tour</h3>
+          <p>Duration: 4 Days</p>
+          <p>Budget: INR 11,000 - 17,000</p>
+          <p>Type: Cultural / Rural Tourism</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=kashmir-rural-life" data-itinerary="kashmir-rural-life">View Details</a>
+        </div>
+      </article>
+
+      <article class="itinerary-card reveal">
+        <img src="images/4.2.jpg.jpeg" alt="High altitude Kashmir itinerary" />
+        <div class="itinerary-card-content">
+          <h3>High-Altitude Adventure Kashmir</h3>
+          <p>Duration: 7 Days</p>
+          <p>Budget: INR 30,000 - 45,000</p>
+          <p>Type: Extreme Adventure</p>
+          <a class="btn btn-primary view-details-btn" href="itinerary-details.html?itinerary=high-altitude-adventure-kashmir" data-itinerary="high-altitude-adventure-kashmir">View Details</a>
+        </div>
+      </article>
+    </section>
+
+        <section class="explore-no-results hidden" id="filterNoResults">
+          <p>No itineraries match your filters right now.</p>
+        </section>
+      </div>
+
+      <section id="compareWindow" class="explore-compare card reveal hidden">
+      <h2>Compare Itineraries</h2>
+      <p>Select up to three itineraries and compare duration, budget, type, and rating.</p>
+      <div id="compareSummary" class="status-line">Select at least two itineraries from the cards to compare.</div>
+      <div id="compareTableWrap" class="hidden">
+        <table class="compare-table" id="compareTable">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th id="compareColA">Itinerary A</th>
+              <th id="compareColB">Itinerary B</th>
+              <th id="compareColC" class="hidden">Itinerary C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Duration</td><td id="cmpDurationA">-</td><td id="cmpDurationB">-</td><td id="cmpDurationC" class="hidden">-</td></tr>
+            <tr><td>Budget</td><td id="cmpBudgetA">-</td><td id="cmpBudgetB">-</td><td id="cmpBudgetC" class="hidden">-</td></tr>
+            <tr><td>Type</td><td id="cmpTypeA">-</td><td id="cmpTypeB">-</td><td id="cmpTypeC" class="hidden">-</td></tr>
+            <tr><td>Rating</td><td id="cmpRatingA">-</td><td id="cmpRatingB">-</td><td id="cmpRatingC" class="hidden">-</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </section>
+    </div>
+
+    <section class="saved-wrap card reveal">
+      <h2>Saved Itineraries</h2>
+      <p>Your bookmarks are saved locally for quick return visits.</p>
+      <div id="savedList" class="saved-list"></div>
+      <p id="savedEmpty" class="status-line">No saved itineraries. Save from any itinerary card or detail page.</p>
+    </section>
+
+    <section class="tools-grid reveal"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

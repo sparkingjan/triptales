@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Access TripTales to create or manage your Jammu and Kashmir travel plans." />
+  <title>Login | TripTales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a class="brand" href="index.html"><img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" /><span>TripTales</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a class="active" href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="auth-wrap">
+    <section class="auth-card reveal">
+      <h1>Welcome to TripTales</h1>
+      <p>Sign in or create an account to build and manage your Jammu and Kashmir plans.</p>
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-target="loginForm" type="button">Login</button>
+        <button class="tab-btn" data-target="signupForm" type="button">Sign Up</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label>Email<input id="loginEmail" type="email" placeholder="you@example.com" required /></label>
+        <label>Password<input id="loginPassword" type="password" placeholder="Enter password" required /></label>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+
+      <form id="signupForm" class="auth-form hidden">
+        <label>Full Name<input id="signupName" type="text" placeholder="Your full name" required /></label>
+        <label>Email<input id="signupEmail" type="email" placeholder="you@example.com" required /></label>
+        <label>Password<input id="signupPassword" type="password" placeholder="Create password" required /></label>
+        <button class="btn btn-primary" type="submit">Create Account</button>
+      </form>
+      <p id="authStatus" class="status-line"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

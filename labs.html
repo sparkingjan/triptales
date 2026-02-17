@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TripTales Labs for immersive Jammu and Kashmir tourism technology modules." />
+  <title>Labs | TripTales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a class="brand" href="index.html"><img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" /><span>TripTales</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="explore-hero-card reveal">
+      <div>
+        <h1>TripTales Future Labs</h1>
+        <p>Prototype immersive and intelligence-driven modules for next-generation Jammu and Kashmir tourism journeys.</p>
+      </div>
+      <div class="explore-metrics">
+        <article><strong>6</strong><span>Live Lab Modules</span></article>
+        <article><strong>Real-Time</strong><span>Simulation Status</span></article>
+        <article><strong>Safe</strong><span>Local Demo Data</span></article>
+      </div>
+    </section>
+
+    <section class="innovation-grid reveal">
+      <article class="card">
+        <h3>AR/VR Preview Lab with Local Storytelling</h3>
+        <p>Turn itinerary stops into walkable scenes with narration and checkpoint beacons.</p>
+        <form class="tool-form mini-form" data-output="arvrOutput">
+          <label>Select Itinerary<select><option>Auto-match from destination</option></select></label>
+          <label>Destination<input type="text" placeholder="e.g., Gurez Valley, Srinagar" /></label>
+          <label>Preview Mode<select><option>VR Walkthrough (Headset)</option></select></label>
+          <label>Interaction Style<select><option>Teleport Between Stops</option></select></label>
+          <label>Storyteller<select><option>Kashmiri Poet Narration</option></select></label>
+          <button class="btn btn-primary" type="submit">Launch Immersive Preview</button>
+        </form>
+        <p id="arvrOutput" class="status-line">No stop beacons generated yet.</p>
+      </article>
+
+      <article class="card">
+        <h3>Metaverse Meetups for Travel Cohorts</h3>
+        <p>Host moderated pre-trip rooms with locals and fellow travelers around shared themes.</p>
+        <form class="tool-form mini-form" data-output="metaOutput">
+          <label>Trip Theme<select><option>Off-beat Explorers</option><option>Family Trips</option></select></label>
+          <label>Preferred Day<input type="date" /></label>
+          <label>Session Type<select><option>Local Tea Circle with Hosts</option></select></label>
+          <button class="btn btn-primary" type="submit">Reserve Metaverse Seat</button>
+        </form>
+        <p id="metaOutput" class="status-line">Reserve your slot and get a secure room token for your cohort meetup.</p>
+      </article>
+
+      <article class="card">
+        <h3>Carbon Footprint + Green Offset Marketplace</h3>
+        <p>Estimate emissions and map offset actions to local eco-project options.</p>
+        <form class="tool-form mini-form" data-output="carbonOutput">
+          <label>Primary Transport<select><option>Shared Cab</option><option>Private Cab</option><option>Bus</option></select></label>
+          <label>Total Distance (km)<input type="number" min="1" value="320" /></label>
+          <label>Travelers<input type="number" min="1" value="2" /></label>
+          <button class="btn btn-primary" type="submit">Calculate Carbon + Offsets</button>
+        </form>
+        <p id="carbonOutput" class="status-line">Carbon score and offset project options will appear here.</p>
+      </article>
+
+      <article class="card">
+        <h3>Wearable Safety Nets</h3>
+        <p>Generate smartwatch-style risk alerts using altitude and route profile inputs.</p>
+        <form class="tool-form mini-form" data-output="safetyOutput">
+          <label>Destination<input type="text" placeholder="e.g., Sonamarg" /></label>
+          <label>Peak Altitude (meters)<input type="number" min="0" value="2800" /></label>
+          <label>Health Profile<select><option>General</option><option>Sensitive to altitude</option></select></label>
+          <button class="btn btn-primary" type="submit">Run Safety Check</button>
+        </form>
+        <p id="safetyOutput" class="status-line">Risk insights and wearable alert recommendations will appear here.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Itinerary Details | TripTales</title>
+  <meta name="description" content="TripTales itinerary details page for Jammu and Kashmir trips." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" class="h-9 w-9 object-contain" />
+        <span class="text-lg font-bold tracking-tight text-sky-800">TripTales</span>
+      </a>
+      <ul class="flex items-center gap-5 text-sm font-medium text-slate-700">
+        <li><a href="index.html" class="hover:text-sky-700">Home</a></li>
+        <li><a href="explore.html" class="text-sky-700">Explore</a></li>
+        <li><a href="about.html" class="hover:text-sky-700">About</a></li>
+        <li><a href="admin.html" class="hover:text-sky-700">Admin</a></li>
+        <li><a href="login.html" class="hover:text-sky-700">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="heroSection" class="relative h-[390px] w-full sm:h-[420px]">
+    <img id="heroImage" src="images/1.3.jpg.jpeg" alt="Itinerary image" class="h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+    <div class="absolute inset-x-0 bottom-0 mx-auto max-w-7xl px-4 pb-8 text-white sm:px-6 lg:px-8">
+      <p id="heroDivision" class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-sky-100">Division: Kashmir</p>
+      <h1 id="heroTitle" class="text-3xl font-bold leading-tight sm:text-4xl">Sonamarg Alpine Escape</h1>
+      <p id="heroType" class="mt-2 text-base text-slate-100 sm:text-lg">Type: Scenic Nature Trip</p>
+    </div>
+  </section>
+
+  <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-10">
+      <section class="space-y-6 lg:col-span-7">
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Trip Overview</h2>
+          <div class="mt-4 space-y-2 text-sm sm:text-base">
+            <p><span class="font-semibold text-slate-900">Budget:</span> <span id="overviewBudget">INR 12,000 - 18,000</span></p>
+            <p><span class="font-semibold text-slate-900">Type:</span> <span id="overviewType">Scenic Nature Trip</span></p>
+          </div>
+          <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Views</p>
+              <p id="viewCount" class="text-lg font-bold text-slate-900">0</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Saves</p>
+              <p id="saveCount" class="text-lg font-bold text-slate-900">0</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+              <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Execution</p>
+              <p id="checklistProgressText" class="text-lg font-bold text-slate-900">0%</p>
+            </div>
+          </div>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a id="bookTripBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-800">Book This Trip</a>
+            <button id="saveTripBtn" type="button" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100">Save Itinerary</button>
+            <button id="planJourneyBtn" type="button" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100">Plan This Journey</button>
+            <a id="streetViewBtn" href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0837,74.7973&heading=120&pitch=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100">Open 3D Street View</a>
+            <button id="arVrBtn" type="button" disabled title="AR/VR is coming soon" class="inline-flex cursor-not-allowed items-center justify-center rounded-xl border border-slate-200 bg-slate-100 px-5 py-2.5 text-sm font-semibold text-slate-500">AR/VR (Coming Soon)</button>
+            <button id="maximizeBtn" type="button" class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100">Maximize</button>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Day-wise Plan</h2>
+          <ol id="dayPlanList" class="mt-5 space-y-4"></ol>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Mini Route Map</h2>
+          <p class="mt-2 text-sm text-slate-600">Quick route preview for this itinerary. Open or maximize for detailed navigation.</p>
+          <div id="miniRouteMapWrap" class="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+            <iframe
+              id="miniRouteMap"
+              title="Mini itinerary route map"
+              class="h-[240px] w-full border-0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src=""
+            ></iframe>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <a id="openRouteMapBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Open Full Route</a>
+            <button id="maximizeRouteMapBtn" type="button" class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100">Maximize Map</button>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Execution Brief</h2>
+          <div class="mt-4 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Stay Recommendation</p>
+              <p id="staySuggestion" class="mt-1 text-sm text-slate-700">-</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Transport Plan</p>
+              <p id="transportSuggestion" class="mt-1 text-sm text-slate-700">-</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Activity Focus</p>
+              <p id="activitySuggestion" class="mt-1 text-sm text-slate-700">-</p>
+            </div>
+          </div>
+          <div class="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-sm font-semibold text-slate-900">Budget Breakdown (Estimated)</p>
+            <div id="budgetBreakdown" class="mt-2 grid gap-2 text-sm text-slate-700 sm:grid-cols-2"></div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Safety Snapshot</h2>
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Overall Safety</p>
+              <p id="overallSafetyRating" class="mt-1 text-sm text-slate-700">-</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Women Safety</p>
+              <p id="womenSafetyRating" class="mt-1 text-sm text-slate-700">-</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Night Mobility</p>
+              <p id="nightSafetyRating" class="mt-1 text-sm text-slate-700">-</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+              <p class="text-sm font-semibold text-slate-900">Route Guidance</p>
+              <p id="safetyHint" class="mt-1 text-sm text-slate-700">Follow verified stays and shared transport on remote stretches.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Execution Checklist Mode</h2>
+          <p class="mt-2 text-sm text-slate-600">Track each step while carrying out your itinerary.</p>
+          <div class="mt-4 h-2 w-full overflow-hidden rounded-full bg-slate-200">
+            <div id="checklistProgressBar" class="h-full rounded-full bg-emerald-500 transition-all" style="width:0%"></div>
+          </div>
+          <ul id="checklistItems" class="mt-4 space-y-2"></ul>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">Traveler Interaction</h2>
+          <div class="mt-4 flex items-center gap-3">
+            <button id="upvoteBtn" type="button" class="rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700">Upvote</button>
+            <p class="text-sm text-slate-700"><span id="upvoteCount" class="font-semibold text-slate-900">0</span> upvotes</p>
+          </div>
+          <p id="ratingSummary" class="mt-2 text-sm font-medium text-slate-700">4.7 ★★★★☆ based on traveler reviews</p>
+
+          <div class="mt-6 border-t border-slate-200 pt-6">
+            <h3 class="text-lg font-semibold text-slate-900">Reviews</h3>
+            <form id="reviewForm" class="mt-4 space-y-3">
+              <div>
+                <label for="reviewName" class="mb-1 block text-sm font-medium text-slate-700">Name</label>
+                <input id="reviewName" type="text" maxlength="40" placeholder="Traveler" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100" />
+              </div>
+              <div>
+                <label for="reviewText" class="mb-1 block text-sm font-medium text-slate-700">Review</label>
+                <textarea id="reviewText" rows="4" maxlength="500" required placeholder="Share your experience..." class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"></textarea>
+              </div>
+              <div>
+                <label for="reviewRating" class="mb-1 block text-sm font-medium text-slate-700">Rating</label>
+                <select id="reviewRating" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100">
+                  <option value="5">5 - Excellent</option>
+                  <option value="4">4 - Good</option>
+                  <option value="3">3 - Average</option>
+                  <option value="2">2 - Needs Improvement</option>
+                  <option value="1">1 - Poor</option>
+                </select>
+              </div>
+              <button type="submit" class="rounded-xl bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Submit Review</button>
+            </form>
+            <div id="reviewsContainer" class="mt-6 space-y-3">
+              <p id="emptyState" class="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-600">No reviews yet. Be the first to share feedback.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-xl font-semibold text-slate-900">AI Trip Optimizer</h2>
+          <p class="mt-2 text-sm text-slate-600">Ask the assistant to optimize budget, shorten/expand days, improve safety, or adapt this itinerary to your needs.</p>
+          <form id="aiOptimizeForm" class="mt-4 space-y-3">
+            <label class="block text-sm font-medium text-slate-700">
+              Optimization Goal
+              <select id="aiOptimizeGoal" class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100">
+                <option value="optimize-budget">Optimize Budget</option>
+                <option value="shorten-trip">Shorten Trip</option>
+                <option value="expand-trip">Expand Trip</option>
+                <option value="improve-safety">Improve Safety</option>
+                <option value="family-friendly">Make It Family Friendly</option>
+              </select>
+            </label>
+            <label class="block text-sm font-medium text-slate-700">
+              Extra Context
+              <textarea id="aiOptimizeContext" rows="3" maxlength="400" placeholder="e.g., Two women travelers, want safer evening movement and lower cab costs." class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"></textarea>
+            </label>
+            <button id="aiOptimizeBtn" type="submit" class="rounded-xl bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Generate Optimization Plan</button>
+          </form>
+          <div id="aiOptimizeOutput" class="mt-4 rounded-xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-700">AI optimization output will appear here.</div>
+        </article>
+      </section>
+
+      <aside id="bookingSidebar" class="lg:col-span-3">
+        <div class="space-y-4 rounded-2xl border border-slate-300 bg-white p-5 shadow-xl lg:sticky lg:top-24 lg:max-h-[calc(100vh-6.5rem)] lg:overflow-y-auto" style="scrollbar-gutter: stable;">
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Contributor Profile</h3>
+            <p id="contributorName" class="mt-1 text-sm font-semibold text-slate-800">-</p>
+            <p id="contributorBadge" class="mt-1 inline-flex rounded-full bg-sky-100 px-2 py-0.5 text-xs font-semibold text-sky-800">-</p>
+            <p id="contributorStats" class="mt-2 text-xs text-slate-600">Views: - | Saves: - | Avg Rating: -</p>
+          </article>
+
+          <h2 class="text-xl font-semibold text-slate-900">Plan &amp; Book This Trip</h2>
+
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Stay Options</h3>
+            <p class="mt-1 text-sm text-slate-600">Find hotels, homestays, or houseboats nearby.</p>
+            <a id="hotelsLink" href="#" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-sky-700 px-3 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Check Hotels</a>
+          </article>
+
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Transport</h3>
+            <p class="mt-1 text-sm text-slate-600">Book cabs or check travel routes.</p>
+            <a id="transportLink" href="#" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-sky-700 px-3 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Find Transport</a>
+          </article>
+
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Activities</h3>
+            <p class="mt-1 text-sm text-slate-600">Reserve local experiences and attractions.</p>
+            <a id="activitiesLink" href="#" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-sky-700 px-3 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">View Activities</a>
+          </article>
+
+          <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Local Guides</h3>
+            <p class="mt-1 text-sm text-slate-600">Connect with certified local guides.</p>
+            <a id="guidesLink" href="#" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-sky-700 px-3 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Find Guides</a>
+          </article>
+
+          <article class="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Deals &amp; Discounts</h3>
+            <p class="mt-1 text-sm text-slate-700">Use these demo offers while booking this itinerary.</p>
+            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+              <li class="rounded-lg bg-white px-3 py-2 border border-emerald-100"><strong>Stay Deal:</strong> Flat 12% off on partner stays</li>
+              <li class="rounded-lg bg-white px-3 py-2 border border-emerald-100"><strong>Transport Deal:</strong> Up to INR 800 off on local cabs</li>
+              <li class="rounded-lg bg-white px-3 py-2 border border-emerald-100"><strong>Activity Deal:</strong> Buy 2 experiences, get 10% off</li>
+            </ul>
+            <div class="mt-3 space-y-2">
+              <div class="flex items-center gap-2 rounded-lg border border-emerald-200 bg-white px-3 py-2">
+                <span class="text-sm font-semibold text-emerald-700">TRIPTALES10</span>
+                <button type="button" data-code="TRIPTALES10" class="coupon-copy-btn ml-auto rounded-md border border-emerald-300 bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-800 transition hover:bg-emerald-200">Copy</button>
+              </div>
+              <div class="flex items-center gap-2 rounded-lg border border-emerald-200 bg-white px-3 py-2">
+                <span class="text-sm font-semibold text-emerald-700">STAY12</span>
+                <button type="button" data-code="STAY12" class="coupon-copy-btn ml-auto rounded-md border border-emerald-300 bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-800 transition hover:bg-emerald-200">Copy</button>
+              </div>
+              <div class="flex items-center gap-2 rounded-lg border border-emerald-200 bg-white px-3 py-2">
+                <span class="text-sm font-semibold text-emerald-700">CAB800</span>
+                <button type="button" data-code="CAB800" class="coupon-copy-btn ml-auto rounded-md border border-emerald-300 bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-800 transition hover:bg-emerald-200">Copy</button>
+              </div>
+            </div>
+            <p id="discountCopyStatus" class="mt-2 text-xs text-emerald-700"></p>
+          </article>
+
+          <article class="rounded-xl border border-sky-200 bg-sky-50 p-4">
+            <h3 class="text-sm font-semibold text-slate-900">Budget Estimate</h3>
+            <p id="budgetEstimate" class="mt-2 text-2xl font-bold text-sky-800">INR 12,000 - 18,000</p>
+          </article>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      function getApiBase() {
+        if (window.location.protocol === "file:") return "http://127.0.0.1:8000";
+        var host = String(window.location.hostname || "").toLowerCase();
+        var port = String(window.location.port || "");
+        var localHost = host === "localhost" || host === "127.0.0.1";
+        if (localHost && port && port !== "8000") return "http://127.0.0.1:8000";
+        if (!host) return "http://127.0.0.1:8000";
+        return "";
+      }
+
+      function apiUrl(path) {
+        return getApiBase() + path;
+      }
+
+      var itineraryData = {
+        "kashmir-budget": { title: "Kashmir Budget Explorer", division: "Kashmir", budget: "INR 18,000 - 22,000", type: "Budget Traveler", image: "images/1.1.jpg.jpeg", streetView: { lat: 28.6129, lng: 77.2295, heading: 110, pitch: 0, fov: 80 }, days: ["Day 1: Srinagar - Dal Lake shikara ride, Mughal Gardens, local market visit.", "Day 2: Gulmarg - Gondola ride and snow activities.", "Day 3: Pahalgam - Betaab Valley and Aru Valley.", "Day 4: Sonamarg - Glacier sightseeing and riverside exploration.", "Day 5: Local Srinagar food tour and departure."] },
+        "kashmir-luxury-couple": { title: "Kashmir Luxury Couple Trip", division: "Kashmir", budget: "INR 35,000 - 45,000", type: "Luxury Couple Trip", image: "images/2.1.jpg.jpeg", streetView: { lat: 34.0484, lng: 74.3805, heading: 170, pitch: 0, fov: 80 }, days: ["Day 1: Houseboat stay and shikara experience.", "Day 2: Gulmarg luxury resort stay and Gondola ride.", "Day 3: Pahalgam riverside retreat."] },
+        "jammu-pilgrimage-family": { title: "Jammu Pilgrimage Family Plan", division: "Jammu", budget: "INR 9,000 - 12,000", type: "Pilgrimage + Family Trip", image: "images/3.1.jpg.jpeg", streetView: { lat: 32.9916, lng: 74.9312, heading: 80, pitch: 0, fov: 80 }, days: ["Day 1: Vaishno Devi yatra.", "Day 2: Rest and Katra exploration.", "Day 3: Patnitop sightseeing.", "Day 4: Bahu Fort and Mansar Lake."] },
+        "jammu-cultural-history": { title: "Jammu Culture and History Trail", division: "Jammu", budget: "INR 8,000 - 10,000", type: "Cultural and History", image: "images/4.2.jpg.jpeg", streetView: { lat: 32.7278, lng: 74.8572, heading: 205, pitch: 0, fov: 80 }, days: ["Day 1: Raghunath Temple and Amar Mahal.", "Day 2: Mubarak Mandi Palace.", "Day 3: Surinsar Lake picnic."] },
+        "kashmir-adventure": { title: "Kashmir Adventure Circuit", division: "Kashmir", budget: "INR 28,000 - 35,000", type: "Adventure Travelers", image: "images/5.1.jpg.jpeg", streetView: { lat: 34.0161, lng: 75.3185, heading: 150, pitch: 0, fov: 80 }, days: ["Day 1: Srinagar arrival.", "Day 2: Gulmarg skiing.", "Day 3: Pahalgam rafting.", "Day 4: Aru Valley trekking.", "Day 5: Sonamarg camping.", "Day 6: Return."] },
+        "gulmarg-winter-wonderland": { title: "Gulmarg Winter Wonderland", division: "Kashmir", budget: "INR 16,000 - 24,000", type: "Snow & Winter Trip", image: "images/1.2.jpg.jpeg", streetView: { lat: 34.0484, lng: 74.3805, heading: 190, pitch: -4, fov: 82 }, days: ["Day 1: Reach Gulmarg and settle into a snow-view stay.", "Day 2: Gondola phase ride and beginner snow activities.", "Day 3: Ski lessons, market walk, and local Kashmiri dinner.", "Day 4: Morning viewpoint visit and return to Srinagar."] },
+        "sonamarg-alpine-escape": { title: "Sonamarg Alpine Escape", division: "Kashmir", budget: "INR 12,000 - 18,000", type: "Scenic Nature Trip", image: "images/1.3.jpg.jpeg", streetView: { lat: 34.2993, lng: 75.2933, heading: 120, pitch: -2, fov: 84 }, days: ["Day 1: Srinagar to Sonamarg drive with riverside photo stops.", "Day 2: Thajiwas side excursion and meadow exploration.", "Day 3: Leisure breakfast and return via scenic valley route."] },
+        "solo-kashmir-backpack": { title: "Solo Kashmir Backpack Plan", division: "Kashmir", budget: "INR 14,000 - 19,000", type: "Solo Budget Travel", image: "images/2.2.jpg.jpeg", streetView: { lat: 34.0837, lng: 74.7973, heading: 130, pitch: 0, fov: 86 }, days: ["Day 1: Srinagar old city walk and shared transport planning.", "Day 2: Budget day trip to Gulmarg with local food stops.", "Day 3: Pahalgam valley loops and hostel community events.", "Day 4: Sonamarg short hike and return by evening.", "Day 5: Handicraft market, lakefront sunset, and departure."] },
+        "romantic-kashmir-honeymoon": { title: "Romantic Kashmir Honeymoon", division: "Kashmir", budget: "INR 32,000 - 48,000", type: "Honeymoon / Couple", image: "images/2.3.jpg.jpeg", streetView: { lat: 34.0723, lng: 74.8268, heading: 112, pitch: 0, fov: 80 }, days: ["Day 1: Houseboat check-in and sunset shikara for two.", "Day 2: Mughal gardens, boutique cafe visits, and dinner cruise.", "Day 3: Gulmarg day outing with gondola and scenic viewpoints.", "Day 4: Pahalgam riverside retreat and private bonfire evening.", "Day 5: Leisure breakfast, shopping, and airport transfer."] },
+        "patnitop-hill-getaway": { title: "Patnitop Hill Station Getaway", division: "Jammu", budget: "INR 6,000 - 9,000", type: "Weekend Trip", image: "images/3.2.jpg.jpeg", streetView: { lat: 33.0826, lng: 75.3293, heading: 180, pitch: 0, fov: 82 }, days: ["Day 1: Jammu to Patnitop drive and local meadow sightseeing.", "Day 2: Sunrise viewpoint, short trek, and return to Jammu."] },
+        "kashmir-camping-adventure": { title: "Kashmir Camping Adventure", division: "Kashmir", budget: "INR 18,000 - 26,000", type: "Camping & Trekking", image: "images/3.3.jpg.jpeg", streetView: { lat: 34.0161, lng: 75.3185, heading: 165, pitch: 0, fov: 84 }, days: ["Day 1: Basecamp briefing and acclimatization walk.", "Day 2: Moderate ridge trek and alpine campsite stay.", "Day 3: Valley crossing with streamside lunch breaks.", "Day 4: Sunrise viewpoint and return to Srinagar."] },
+        "amarnath-pilgrimage-route": { title: "Amarnath Pilgrimage Route Plan", division: "Kashmir", budget: "INR 12,000 - 18,000", type: "Pilgrimage", image: "images/4.3.jpg.jpeg", streetView: { lat: 34.1242, lng: 75.3186, heading: 90, pitch: 0, fov: 82 }, days: ["Day 1: Arrival in Pahalgam and permit/document check.", "Day 2: Chandanwari transit and yatra orientation.", "Day 3: Trek segment toward next camp halt.", "Day 4: Main darshan route and controlled return.", "Day 5: Buffer and safe departure."] },
+        "kashmir-photography-expedition": { title: "Kashmir Photography Expedition", division: "Kashmir", budget: "INR 24,000 - 34,000", type: "Photography Trip", image: "images/5.2.jpg.jpeg", streetView: { lat: 34.0837, lng: 74.7973, heading: 145, pitch: 0, fov: 78 }, days: ["Day 1: Golden-hour Dal Lake and old city street shots.", "Day 2: Gulmarg snow and cable-car landscape frames.", "Day 3: Pahalgam river basin portrait and action sessions.", "Day 4: Sonamarg alpine views and long-lens captures.", "Day 5: Market textures, food stories, and twilight skyline.", "Day 6: Backup shots and departure."] },
+        "kashmir-family-comfort": { title: "Kashmir Family Comfort Trip", division: "Kashmir", budget: "INR 20,000 - 30,000", type: "Family Friendly", image: "images/5.3.jpg.jpeg", streetView: { lat: 34.0723, lng: 74.8268, heading: 115, pitch: 0, fov: 84 }, days: ["Day 1: Srinagar arrival and gentle local sightseeing.", "Day 2: Garden circuit and cultural evening.", "Day 3: Gulmarg gondola lower phase and leisure time.", "Day 4: Pahalgam picnic day and easy nature trails.", "Day 5: Shopping, local cuisine, and return."] },
+        "self-drive-kashmir-circuit": { title: "Self-Drive Kashmir Circuit", division: "Kashmir", budget: "INR 22,000 - 32,000", type: "Road Trip", image: "images/1.1.jpg.jpeg", streetView: { lat: 34.1022, lng: 74.8365, heading: 122, pitch: 0, fov: 82 }, days: ["Day 1: Srinagar pick-up and orientation drive.", "Day 2: Srinagar to Gulmarg loop.", "Day 3: Gulmarg to Pahalgam via scenic segments.", "Day 4: Pahalgam local route and village roads.", "Day 5: Sonamarg highland drive and valley return.", "Day 6: Srinagar wrap-up and drop."] },
+        "hidden-gems-kashmir": { title: "Hidden Gems of Kashmir", division: "Kashmir", budget: "INR 17,000 - 25,000", type: "Offbeat Travel", image: "images/2.1.jpg.jpeg", streetView: { lat: 33.9541, lng: 75.1457, heading: 160, pitch: 0, fov: 85 }, days: ["Day 1: Offbeat Srinagar neighborhoods and artisan clusters.", "Day 2: Lesser-known meadow circuit with local guide.", "Day 3: Village trail and mountain stream picnic.", "Day 4: Hidden valley viewpoints and forest walk.", "Day 5: Return with local cafe and market stops."] },
+        "kashmir-tulip-spring": { title: "Kashmir Tulip & Spring Tour", division: "Kashmir", budget: "INR 13,000 - 18,000", type: "Seasonal / Spring", image: "images/1.2.jpg.jpeg", streetView: { lat: 34.0858, lng: 74.8338, heading: 98, pitch: 0, fov: 80 }, days: ["Day 1: Tulip garden visit and boulevard walk.", "Day 2: Blossom trails, cafe hopping, and market stop.", "Day 3: Spring lake ride and departure."] },
+        "autumn-valley-experience": { title: "Autumn Valley Experience", division: "Kashmir", budget: "INR 15,000 - 22,000", type: "Seasonal / Autumn", image: "images/1.3.jpg.jpeg", streetView: { lat: 34.1467, lng: 74.6235, heading: 135, pitch: 0, fov: 84 }, days: ["Day 1: Arrival and chinar-lined boulevard exploration.", "Day 2: Valley viewpoints with autumn foliage walks.", "Day 3: Local cuisine trail and riverside relaxation.", "Day 4: Early morning photo stop and return."] },
+        "kashmir-rural-life": { title: "Kashmir Rural Life Tour", division: "Kashmir", budget: "INR 11,000 - 17,000", type: "Cultural / Rural Tourism", image: "images/3.1.jpg.jpeg", streetView: { lat: 34.2054, lng: 74.3432, heading: 118, pitch: 0, fov: 85 }, days: ["Day 1: Village check-in and community orientation.", "Day 2: Orchard trail and traditional meal experience.", "Day 3: Craft workshop and local market exchange.", "Day 4: Morning farm walk and departure."] },
+        "high-altitude-adventure-kashmir": { title: "High-Altitude Adventure Kashmir", division: "Kashmir", budget: "INR 30,000 - 45,000", type: "Extreme Adventure", image: "images/4.2.jpg.jpeg", streetView: { lat: 34.4303, lng: 75.3997, heading: 142, pitch: 0, fov: 88 }, days: ["Day 1: Arrival, gear checks, and acclimatization.", "Day 2: Endurance hike and technical briefing.", "Day 3: High-pass approach and camp setup.", "Day 4: Summit attempt window with safety protocol.", "Day 5: Ridge traverse and controlled descent.", "Day 6: Backup weather day and local recovery stay.", "Day 7: Debrief and departure."] }
+      };
+
+      var itineraryDemoStreetViewLinks = {
+        "kashmir-budget": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=28.6129,77.2295&heading=110&pitch=0",
+        "kashmir-luxury-couple": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0484,74.3805&heading=170&pitch=0",
+        "jammu-pilgrimage-family": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=32.9916,74.9312&heading=80&pitch=0",
+        "jammu-cultural-history": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=32.7278,74.8572&heading=205&pitch=0",
+        "kashmir-adventure": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0161,75.3185&heading=150&pitch=0",
+        "gulmarg-winter-wonderland": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0484,74.3805&heading=190&pitch=-4",
+        "sonamarg-alpine-escape": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.2993,75.2933&heading=120&pitch=-2",
+        "solo-kashmir-backpack": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0837,74.7973&heading=130&pitch=0",
+        "romantic-kashmir-honeymoon": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0723,74.8268&heading=112&pitch=0",
+        "patnitop-hill-getaway": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.0826,75.3293&heading=180&pitch=0",
+        "kashmir-camping-adventure": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0161,75.3185&heading=165&pitch=0",
+        "amarnath-pilgrimage-route": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.1242,75.3186&heading=90&pitch=0",
+        "kashmir-photography-expedition": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0837,74.7973&heading=145&pitch=0",
+        "kashmir-family-comfort": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0723,74.8268&heading=115&pitch=0",
+        "self-drive-kashmir-circuit": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.1022,74.8365&heading=122&pitch=0",
+        "hidden-gems-kashmir": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=33.9541,75.1457&heading=160&pitch=0",
+        "kashmir-tulip-spring": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0858,74.8338&heading=98&pitch=0",
+        "autumn-valley-experience": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.1467,74.6235&heading=135&pitch=0",
+        "kashmir-rural-life": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.2054,74.3432&heading=118&pitch=0",
+        "high-altitude-adventure-kashmir": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.4303,75.3997&heading=142&pitch=0"
+      };
+
+      var itineraryRoutePlaces = {
+        "kashmir-budget": ["Srinagar", "Gulmarg", "Pahalgam", "Sonamarg", "Srinagar"],
+        "kashmir-luxury-couple": ["Srinagar", "Gulmarg", "Pahalgam"],
+        "jammu-pilgrimage-family": ["Jammu", "Katra", "Patnitop", "Bahu Fort, Jammu"],
+        "jammu-cultural-history": ["Jammu", "Raghunath Temple Jammu", "Mubarak Mandi Palace", "Surinsar Lake"],
+        "kashmir-adventure": ["Srinagar", "Gulmarg", "Pahalgam", "Aru Valley", "Sonamarg"],
+        "gulmarg-winter-wonderland": ["Srinagar", "Gulmarg"],
+        "sonamarg-alpine-escape": ["Srinagar", "Sonamarg", "Thajiwas Glacier Sonamarg"],
+        "solo-kashmir-backpack": ["Srinagar", "Gulmarg", "Pahalgam", "Sonamarg", "Srinagar"],
+        "romantic-kashmir-honeymoon": ["Srinagar", "Gulmarg", "Pahalgam", "Srinagar"],
+        "patnitop-hill-getaway": ["Jammu", "Patnitop", "Jammu"],
+        "kashmir-camping-adventure": ["Srinagar", "Aru Valley", "Sonamarg", "Srinagar"],
+        "amarnath-pilgrimage-route": ["Pahalgam", "Chandanwari", "Sheshnag", "Amarnath Cave"],
+        "kashmir-photography-expedition": ["Srinagar", "Gulmarg", "Pahalgam", "Sonamarg", "Srinagar"],
+        "kashmir-family-comfort": ["Srinagar", "Gulmarg", "Pahalgam", "Srinagar"],
+        "self-drive-kashmir-circuit": ["Srinagar", "Gulmarg", "Pahalgam", "Sonamarg", "Srinagar"],
+        "hidden-gems-kashmir": ["Srinagar", "Yusmarg", "Doodhpathri", "Srinagar"],
+        "kashmir-tulip-spring": ["Indira Gandhi Memorial Tulip Garden Srinagar", "Nishat Bagh", "Dal Lake Srinagar"],
+        "autumn-valley-experience": ["Srinagar", "Anantnag", "Pahalgam", "Srinagar"],
+        "kashmir-rural-life": ["Srinagar", "Ganderbal", "Bandipora", "Srinagar"],
+        "high-altitude-adventure-kashmir": ["Srinagar", "Sonamarg", "Zoji La", "Drass"]
+      };
+
+      var feedbackStorageKey = "triptales_itinerary_feedback_v1";
+      var metricsStorageKey = "triptales_itinerary_metrics_v1";
+      var checklistStorageKey = "triptales_itinerary_checklist_v1";
+      var feedbackScoreDefaults = {
+        "kashmir-budget": 18,
+        "kashmir-luxury-couple": 11,
+        "jammu-pilgrimage-family": 14,
+        "jammu-cultural-history": 9,
+        "kashmir-adventure": 16,
+        "gulmarg-winter-wonderland": 12,
+        "sonamarg-alpine-escape": 10,
+        "solo-kashmir-backpack": 15,
+        "romantic-kashmir-honeymoon": 17,
+        "patnitop-hill-getaway": 8,
+        "kashmir-camping-adventure": 13,
+        "amarnath-pilgrimage-route": 11,
+        "kashmir-photography-expedition": 9,
+        "kashmir-family-comfort": 14,
+        "self-drive-kashmir-circuit": 10,
+        "hidden-gems-kashmir": 13,
+        "kashmir-tulip-spring": 16,
+        "autumn-valley-experience": 7,
+        "kashmir-rural-life": 6,
+        "high-altitude-adventure-kashmir": 12
+      };
+      var feedbackSeedNames = ["Riya", "Aman", "Kabir", "Sana", "Aditya", "Neha", "Yash", "Ritika", "Arjun", "Mehak", "Rohan", "Isha"];
+      var feedbackSeedTemplates = [
+        "{title} had a practical route and smooth day pacing.",
+        "Stayed close to the plan for {title} and it worked really well.",
+        "Great stop selection in {title}; transfers felt manageable.",
+        "{title} balanced sightseeing and rest time better than expected.",
+        "Used this {title} itinerary with family and everyone enjoyed it.",
+        "Very good value for money for the places covered in {title}.",
+        "Clear schedule in {title}; we did not feel rushed.",
+        "{title} had excellent photo spots and flexible evening slots."
+      ];
+
+      function hashSeed(value) {
+        var hash = 0;
+        var text = String(value || "");
+        for (var i = 0; i < text.length; i += 1) {
+          hash = (hash * 31 + text.charCodeAt(i)) % 2147483647;
+        }
+        return Math.abs(hash);
+      }
+
+      function normalizeRating(value) {
+        var numeric = Number(value);
+        if (isNaN(numeric)) return 5;
+        if (numeric < 1) return 1;
+        if (numeric > 5) return 5;
+        return Math.round(numeric * 10) / 10;
+      }
+
+      function buildStars(rating) {
+        var rounded = Math.round(normalizeRating(rating));
+        var stars = "";
+        for (var i = 0; i < 5; i += 1) {
+          stars += i < rounded ? "★" : "☆";
+        }
+        return stars;
+      }
+
+      function buildRatingSummary(reviews) {
+        if (!reviews.length) {
+          return { average: 4.7, count: 0, stars: buildStars(4.7) };
+        }
+        var total = 0;
+        reviews.forEach(function (review) {
+          total += normalizeRating(review && review.rating);
+        });
+        var average = Math.round((total / reviews.length) * 10) / 10;
+        return {
+          average: average,
+          count: reviews.length,
+          stars: buildStars(average)
+        };
+      }
+
+      function seededReviewDate(daysAgo) {
+        return new Date(Date.now() - daysAgo * 86400000).toISOString();
+      }
+
+      function createSeedReview(seedKey, title, slot) {
+        var seed = hashSeed(seedKey + "|" + slot);
+        var author = feedbackSeedNames[seed % feedbackSeedNames.length];
+        var template = feedbackSeedTemplates[(seed + slot) % feedbackSeedTemplates.length];
+        var rating = 4 + ((seed + slot) % 2);
+        var daysAgo = 2 + ((seed + slot * 7) % 30);
+        return {
+          author: author,
+          text: template.replace("{title}", title).slice(0, 500),
+          rating: rating,
+          date: seededReviewDate(daysAgo)
+        };
+      }
+
+      function buildFeedbackDefaults() {
+        var defaults = {};
+        Object.keys(feedbackScoreDefaults).forEach(function (seedKey) {
+          var title = itineraryData[seedKey] && itineraryData[seedKey].title ? itineraryData[seedKey].title : seedKey;
+          defaults[seedKey] = {
+            score: feedbackScoreDefaults[seedKey],
+            voted: false,
+            reviews: [
+              createSeedReview(seedKey, title, 0),
+              createSeedReview(seedKey, title, 1)
+            ]
+          };
+        });
+        return defaults;
+      }
+
+      function cloneFeedbackDefaults() {
+        return JSON.parse(JSON.stringify(buildFeedbackDefaults()));
+      }
+
+      function mergeLegacyFeedback(defaults) {
+        var legacyVotes = {};
+        var legacyReviews = {};
+        try {
+          legacyVotes = JSON.parse(localStorage.getItem("triptales_itinerary_votes_v1") || "{}") || {};
+        } catch (error) {
+          legacyVotes = {};
+        }
+        try {
+          legacyReviews = JSON.parse(localStorage.getItem("triptales_itinerary_reviews_v1") || "{}") || {};
+        } catch (error2) {
+          legacyReviews = {};
+        }
+        Object.keys(defaults).forEach(function (seedKey) {
+          if (typeof legacyVotes[seedKey] === "number") {
+            defaults[seedKey].score = legacyVotes[seedKey];
+          }
+          if (Array.isArray(legacyReviews[seedKey]) && legacyReviews[seedKey].length) {
+            defaults[seedKey].reviews = legacyReviews[seedKey]
+              .filter(function (review) { return review && typeof review.text === "string"; })
+              .map(function (review) {
+                return {
+                  author: String(review.author || "Traveler").slice(0, 40),
+                  text: String(review.text || "").slice(0, 500),
+                  rating: 5,
+                  date: String(review.date || new Date().toISOString())
+                };
+              });
+          }
+        });
+        return defaults;
+      }
+
+      function loadFeedbackState() {
+        var defaults = cloneFeedbackDefaults();
+        try {
+          var raw = localStorage.getItem(feedbackStorageKey);
+          if (!raw) return mergeLegacyFeedback(defaults);
+          var parsed = JSON.parse(raw);
+          if (!parsed || typeof parsed !== "object") return mergeLegacyFeedback(defaults);
+          Object.keys(defaults).forEach(function (seedKey) {
+            var source = parsed[seedKey];
+            if (!source || typeof source !== "object") return;
+            if (typeof source.score === "number") defaults[seedKey].score = source.score;
+            defaults[seedKey].voted = Boolean(source.voted);
+            if (Array.isArray(source.reviews) && source.reviews.length) {
+              defaults[seedKey].reviews = source.reviews
+                .filter(function (review) { return review && typeof review.text === "string"; })
+                .map(function (review) {
+                  return {
+                    author: String(review.author || "Traveler").slice(0, 40),
+                    text: String(review.text || "").slice(0, 500),
+                    rating: normalizeRating(review.rating),
+                    date: String(review.date || new Date().toISOString())
+                  };
+                });
+              }
+          });
+        } catch (error) {
+          return mergeLegacyFeedback(defaults);
+        }
+        return defaults;
+      }
+
+      function saveFeedbackState(state) {
+        try {
+          localStorage.setItem(feedbackStorageKey, JSON.stringify(state));
+        } catch (error) {
+          return;
+        }
+      }
+
+      function loadJsonState(keyName, fallback) {
+        try {
+          var raw = localStorage.getItem(keyName);
+          if (!raw) return fallback;
+          var parsed = JSON.parse(raw);
+          return parsed && typeof parsed === "object" ? parsed : fallback;
+        } catch (error) {
+          return fallback;
+        }
+      }
+
+      function saveJsonState(keyName, value) {
+        try {
+          localStorage.setItem(keyName, JSON.stringify(value));
+        } catch (error) {
+          return;
+        }
+      }
+
+      function buildStreetViewWebLink(itineraryKey, streetView) {
+        var demoUrl = "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=34.0837,74.7973&heading=120&pitch=0";
+        if (itineraryKey && itineraryDemoStreetViewLinks[itineraryKey]) {
+          return itineraryDemoStreetViewLinks[itineraryKey];
+        }
+        if (!streetView) return demoUrl;
+        var lat = Number(streetView.lat);
+        var lng = Number(streetView.lng);
+        if (isNaN(lat) || isNaN(lng)) return demoUrl;
+        var heading = Number(streetView.heading || 0);
+        var pitch = Number(streetView.pitch || 0);
+        return "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint="
+          + lat + "," + lng + "&heading=" + heading + "&pitch=" + pitch;
+      }
+
+      function buildMiniRouteMapEmbedUrl(itineraryKey, data) {
+        var places = itineraryRoutePlaces[itineraryKey] || [];
+        if (places.length >= 2) {
+          var routeQuery = encodeURIComponent(places.join(" to "));
+          return "https://www.google.com/maps?q=" + routeQuery + "&output=embed";
+        }
+        var street = data && data.streetView ? data.streetView : null;
+        var lat = Number(street && street.lat);
+        var lng = Number(street && street.lng);
+        if (!isNaN(lat) && !isNaN(lng)) return "https://www.google.com/maps?q=" + lat + "," + lng + "&z=11&output=embed";
+        return "https://www.google.com/maps?q=" + encodeURIComponent(String((data && data.title) || "Jammu and Kashmir itinerary")) + "&output=embed";
+      }
+
+      function buildMiniRouteMapOpenUrl(itineraryKey, data) {
+        var places = itineraryRoutePlaces[itineraryKey] || [];
+        if (places.length >= 2) {
+          var origin = places[0];
+          var destination = places[places.length - 1];
+          var via = places.slice(1, places.length - 1);
+          var url = "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(origin)
+            + "&destination=" + encodeURIComponent(destination)
+            + "&travelmode=driving";
+          if (via.length) {
+            url += "&waypoints=" + encodeURIComponent(via.join("|"));
+          }
+          return url;
+        }
+        var street = data && data.streetView ? data.streetView : null;
+        var lat = Number(street && street.lat);
+        var lng = Number(street && street.lng);
+        if (!isNaN(lat) && !isNaN(lng)) return "https://www.google.com/maps/dir/?api=1&destination=" + lat + "," + lng + "&travelmode=driving";
+        return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(String((data && data.title) || "Jammu and Kashmir itinerary"));
+      }
+
+      function buildBookingLinks(data) {
+        var query = encodeURIComponent((data.title || "Jammu Kashmir trip") + " Jammu and Kashmir");
+        return {
+          hotels: "https://www.booking.com/searchresults.html?ss=" + query,
+          transport: "https://www.google.com/maps/search/?api=1&query=" + query,
+          activities: "https://www.getyourguide.com/s/?q=" + query,
+          guides: "https://www.viator.com/searchResults/all?text=" + query
+        };
+      }
+
+      function parseBudgetRange(text) {
+        var values = String(text || "").match(/\d[\d,]*/g);
+        if (!values || !values.length) return { low: 12000, high: 18000 };
+        var low = Number(String(values[0]).replace(/,/g, "")) || 12000;
+        var high = Number(String(values[1] || values[0]).replace(/,/g, "")) || low;
+        if (high < low) {
+          var temp = low;
+          low = high;
+          high = temp;
+        }
+        return { low: low, high: high };
+      }
+
+      function createDayItem(text, index) {
+        var li = document.createElement("li");
+        li.className = "flex gap-3";
+        var n = document.createElement("span");
+        n.className = "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sm font-bold text-sky-800";
+        n.textContent = String(index + 1);
+        var p = document.createElement("p");
+        p.className = "text-sm leading-6 text-slate-700 sm:text-base";
+        p.textContent = String(text || "");
+        li.appendChild(n);
+        li.appendChild(p);
+        return li;
+      }
+
+      var params = new URLSearchParams(window.location.search);
+      var key = params.get("itinerary") || "sonamarg-alpine-escape";
+      if (!itineraryData[key]) key = "sonamarg-alpine-escape";
+      var itinerary = itineraryData[key];
+
+      var heroSection = document.getElementById("heroSection");
+      var heroImage = document.getElementById("heroImage");
+      var heroDivision = document.getElementById("heroDivision");
+      var heroTitle = document.getElementById("heroTitle");
+      var heroType = document.getElementById("heroType");
+      var overviewBudget = document.getElementById("overviewBudget");
+      var overviewType = document.getElementById("overviewType");
+      var dayPlanList = document.getElementById("dayPlanList");
+      var budgetEstimate = document.getElementById("budgetEstimate");
+      var streetViewBtn = document.getElementById("streetViewBtn");
+      var miniRouteMapWrap = document.getElementById("miniRouteMapWrap");
+      var miniRouteMap = document.getElementById("miniRouteMap");
+      var openRouteMapBtn = document.getElementById("openRouteMapBtn");
+      var maximizeRouteMapBtn = document.getElementById("maximizeRouteMapBtn");
+      var hotelsLink = document.getElementById("hotelsLink");
+      var transportLink = document.getElementById("transportLink");
+      var activitiesLink = document.getElementById("activitiesLink");
+      var guidesLink = document.getElementById("guidesLink");
+      var bookTripBtn = document.getElementById("bookTripBtn");
+      var saveTripBtn = document.getElementById("saveTripBtn");
+      var planJourneyBtn = document.getElementById("planJourneyBtn");
+      var bookingSidebar = document.getElementById("bookingSidebar");
+      var maximizeBtn = document.getElementById("maximizeBtn");
+      var upvoteBtn = document.getElementById("upvoteBtn");
+      var upvoteCountEl = document.getElementById("upvoteCount");
+      var ratingSummaryEl = document.getElementById("ratingSummary");
+      var reviewForm = document.getElementById("reviewForm");
+      var reviewName = document.getElementById("reviewName");
+      var reviewText = document.getElementById("reviewText");
+      var reviewRating = document.getElementById("reviewRating");
+      var reviewsContainer = document.getElementById("reviewsContainer");
+      var emptyState = document.getElementById("emptyState");
+      var viewCountEl = document.getElementById("viewCount");
+      var saveCountEl = document.getElementById("saveCount");
+      var checklistItemsEl = document.getElementById("checklistItems");
+      var checklistProgressBar = document.getElementById("checklistProgressBar");
+      var checklistProgressText = document.getElementById("checklistProgressText");
+      var overallSafetyRatingEl = document.getElementById("overallSafetyRating");
+      var womenSafetyRatingEl = document.getElementById("womenSafetyRating");
+      var nightSafetyRatingEl = document.getElementById("nightSafetyRating");
+      var contributorNameEl = document.getElementById("contributorName");
+      var contributorBadgeEl = document.getElementById("contributorBadge");
+      var contributorStatsEl = document.getElementById("contributorStats");
+      var staySuggestionEl = document.getElementById("staySuggestion");
+      var transportSuggestionEl = document.getElementById("transportSuggestion");
+      var activitySuggestionEl = document.getElementById("activitySuggestion");
+      var budgetBreakdownEl = document.getElementById("budgetBreakdown");
+      var couponCopyBtns = Array.prototype.slice.call(document.querySelectorAll(".coupon-copy-btn"));
+      var discountCopyStatus = document.getElementById("discountCopyStatus");
+      var aiOptimizeForm = document.getElementById("aiOptimizeForm");
+      var aiOptimizeGoal = document.getElementById("aiOptimizeGoal");
+      var aiOptimizeContext = document.getElementById("aiOptimizeContext");
+      var aiOptimizeOutput = document.getElementById("aiOptimizeOutput");
+      var aiOptimizeBtn = document.getElementById("aiOptimizeBtn");
+
+      // Assign street-view link early so it remains clickable even if later code fails.
+      if (streetViewBtn) {
+        streetViewBtn.href = buildStreetViewWebLink(key, itinerary.streetView);
+        streetViewBtn.classList.remove("pointer-events-none", "opacity-60");
+        streetViewBtn.removeAttribute("aria-disabled");
+      }
+      if (miniRouteMap) {
+        miniRouteMap.src = buildMiniRouteMapEmbedUrl(key, itinerary);
+      }
+      if (openRouteMapBtn) {
+        openRouteMapBtn.href = buildMiniRouteMapOpenUrl(key, itinerary);
+      }
+
+      document.title = itinerary.title + " | TripTales";
+      heroImage.src = itinerary.image;
+      heroImage.alt = itinerary.title;
+      heroDivision.textContent = "Division: " + itinerary.division;
+      heroTitle.textContent = itinerary.title;
+      heroType.textContent = "Type: " + itinerary.type;
+      overviewBudget.textContent = itinerary.budget;
+      overviewType.textContent = itinerary.type;
+      budgetEstimate.textContent = itinerary.budget;
+      dayPlanList.innerHTML = "";
+      itinerary.days.forEach(function (day, index) {
+        dayPlanList.appendChild(createDayItem(day, index));
+      });
+
+      var contributorNames = ["Aarav Lone", "Sana Qadri", "Meher Bhat", "Rafiq Dar", "Ishita Kaul", "Yawar Mir"];
+      var contributorBadges = ["Top Local Curator", "Budget Optimizer", "Safety First Planner", "Offbeat Explorer", "Family Route Specialist", "Adventure Mapper"];
+      var contributorSeed = hashSeed(key);
+      var contributorName = contributorNames[contributorSeed % contributorNames.length];
+      var contributorBadge = contributorBadges[contributorSeed % contributorBadges.length];
+
+      var safetyOverall = 3.8 + ((contributorSeed % 12) / 10);
+      var safetyWomen = Math.max(3.5, Math.min(5, safetyOverall - 0.2 + ((contributorSeed % 5) / 10)));
+      var safetyNight = Math.max(3.2, Math.min(5, safetyOverall - 0.3 + (((contributorSeed + 3) % 5) / 10)));
+
+      overallSafetyRatingEl.textContent = normalizeRating(safetyOverall).toFixed(1) + " / 5";
+      womenSafetyRatingEl.textContent = normalizeRating(safetyWomen).toFixed(1) + " / 5";
+      nightSafetyRatingEl.textContent = normalizeRating(safetyNight).toFixed(1) + " / 5";
+      contributorNameEl.textContent = contributorName;
+      contributorBadgeEl.textContent = contributorBadge;
+
+      var budgetRange = parseBudgetRange(itinerary.budget);
+      var budgetMid = Math.round((budgetRange.low + budgetRange.high) / 2);
+      var split = {
+        stay: Math.round(budgetMid * 0.4),
+        transport: Math.round(budgetMid * 0.25),
+        food: Math.round(budgetMid * 0.15),
+        activities: Math.round(budgetMid * 0.2)
+      };
+
+      if (budgetBreakdownEl) {
+        budgetBreakdownEl.innerHTML = [
+          "<p>Stay: INR " + split.stay.toLocaleString("en-IN") + "</p>",
+          "<p>Transport: INR " + split.transport.toLocaleString("en-IN") + "</p>",
+          "<p>Food: INR " + split.food.toLocaleString("en-IN") + "</p>",
+          "<p>Activities: INR " + split.activities.toLocaleString("en-IN") + "</p>"
+        ].join("");
+      }
+
+      if (staySuggestionEl) {
+        staySuggestionEl.textContent = budgetMid > 30000 ? "Premium stay near main access points with verified safe-stay preference." : "Comfort stay near transit hubs for faster day execution.";
+      }
+      if (transportSuggestionEl) {
+        transportSuggestionEl.textContent = itinerary.days.length >= 5 ? "Use shared cabs for inter-city transfers and reserve one private local day." : "Use a day-hire cab for smooth execution and flexible stops.";
+      }
+      if (activitySuggestionEl) {
+        activitySuggestionEl.textContent = itinerary.type + " mix with one buffer slot for weather or road shifts.";
+      }
+
+      var metricsState = loadJsonState(metricsStorageKey, {});
+      if (!metricsState[key]) {
+        metricsState[key] = {
+          views: 100 + (contributorSeed % 900),
+          saves: 15 + (contributorSeed % 120),
+          saved: false
+        };
+      }
+      var currentMetrics = metricsState[key];
+      var viewSessionKey = "triptales_viewed_" + key;
+      if (!sessionStorage.getItem(viewSessionKey)) {
+        currentMetrics.views = Number(currentMetrics.views || 0) + 1;
+        sessionStorage.setItem(viewSessionKey, "1");
+      }
+
+      function persistMetrics() {
+        metricsState[key] = currentMetrics;
+        saveJsonState(metricsStorageKey, metricsState);
+      }
+
+      function renderMetrics() {
+        viewCountEl.textContent = String(Number(currentMetrics.views || 0));
+        saveCountEl.textContent = String(Number(currentMetrics.saves || 0));
+        if (saveTripBtn) {
+          saveTripBtn.textContent = currentMetrics.saved ? "Saved" : "Save Itinerary";
+          saveTripBtn.classList.toggle("bg-emerald-600", currentMetrics.saved);
+          saveTripBtn.classList.toggle("text-white", currentMetrics.saved);
+          saveTripBtn.classList.toggle("border-emerald-600", currentMetrics.saved);
+        }
+      }
+
+      if (saveTripBtn) {
+        saveTripBtn.addEventListener("click", function () {
+          currentMetrics.saved = !currentMetrics.saved;
+          if (currentMetrics.saved) {
+            currentMetrics.saves = Number(currentMetrics.saves || 0) + 1;
+          } else {
+            currentMetrics.saves = Math.max(0, Number(currentMetrics.saves || 0) - 1);
+          }
+          persistMetrics();
+          renderMetrics();
+          renderContributorStats();
+        });
+      }
+
+      var checklistState = loadJsonState(checklistStorageKey, {});
+      if (!checklistState[key] || !Array.isArray(checklistState[key].items)) {
+        checklistState[key] = {
+          items: itinerary.days.map(function (day) {
+            var base = String(day).split("-")[0].trim();
+            return {
+              label: base + ": Confirm stay, transport, and essentials",
+              done: false
+            };
+          })
+        };
+      }
+
+      function persistChecklist() {
+        saveJsonState(checklistStorageKey, checklistState);
+      }
+
+      function renderChecklist() {
+        var checklist = checklistState[key].items || [];
+        checklistItemsEl.innerHTML = "";
+        checklist.forEach(function (item, index) {
+          var li = document.createElement("li");
+          li.className = "flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2";
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = Boolean(item.done);
+          checkbox.className = "h-4 w-4";
+          var label = document.createElement("label");
+          label.className = "text-sm text-slate-700";
+          label.textContent = item.label;
+          checkbox.addEventListener("change", function () {
+            checklist[index].done = checkbox.checked;
+            persistChecklist();
+            renderChecklist();
+          });
+          li.appendChild(checkbox);
+          li.appendChild(label);
+          checklistItemsEl.appendChild(li);
+        });
+        var doneCount = checklist.filter(function (item) { return item.done; }).length;
+        var percent = checklist.length ? Math.round((doneCount / checklist.length) * 100) : 0;
+        checklistProgressBar.style.width = percent + "%";
+        checklistProgressText.textContent = percent + "%";
+      }
+
+      function renderContributorStats() {
+        var rating = buildRatingSummary(currentFeedback.reviews || []);
+        contributorStatsEl.textContent = "Views: " + Number(currentMetrics.views || 0) + " | Saves: " + Number(currentMetrics.saves || 0) + " | Avg Rating: " + rating.average.toFixed(1);
+      }
+
+      persistMetrics();
+      renderMetrics();
+      renderChecklist();
+
+      var streetViewUrl = buildStreetViewWebLink(key, itinerary.streetView);
+      if (streetViewBtn) {
+        streetViewBtn.href = streetViewUrl || "#";
+      }
+      if (maximizeRouteMapBtn && miniRouteMapWrap) {
+        maximizeRouteMapBtn.addEventListener("click", function () {
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+            return;
+          }
+          if (miniRouteMapWrap.requestFullscreen) {
+            miniRouteMapWrap.requestFullscreen();
+          }
+        });
+      }
+
+      var links = buildBookingLinks(itinerary);
+      hotelsLink.href = links.hotels;
+      transportLink.href = links.transport;
+      activitiesLink.href = links.activities;
+      guidesLink.href = links.guides;
+      bookTripBtn.href = links.hotels;
+
+      var feedbackState = loadFeedbackState();
+      if (!feedbackState[key]) {
+        feedbackState[key] = {
+          score: 0,
+          voted: false,
+          reviews: []
+        };
+      }
+      var currentFeedback = feedbackState[key];
+      currentFeedback.reviews = [];
+
+      function renderVotes() {
+        upvoteCountEl.textContent = String(currentFeedback.score || 0);
+        upvoteBtn.textContent = currentFeedback.voted ? "Upvoted" : "Upvote";
+      }
+
+      function renderRatingSummary() {
+        if (!ratingSummaryEl) return;
+        var rating = buildRatingSummary(currentFeedback.reviews || []);
+        var suffix = rating.count === 1 ? "review" : "reviews";
+        ratingSummaryEl.textContent = rating.average.toFixed(1) + " " + rating.stars + " based on " + rating.count + " " + suffix;
+      }
+
+      function renderReviews() {
+        reviewsContainer.innerHTML = "";
+        if (!currentFeedback.reviews || !currentFeedback.reviews.length) {
+          reviewsContainer.appendChild(emptyState);
+          emptyState.style.display = "";
+          return;
+        }
+        currentFeedback.reviews.forEach(function (review) {
+          var item = document.createElement("article");
+          item.className = "rounded-xl border border-slate-200 bg-white p-4";
+
+          var meta = document.createElement("p");
+          meta.className = "text-sm font-semibold text-slate-900";
+          var date = new Date(review.date || "");
+          var dateText = isNaN(date.getTime()) ? "Recently" : date.toLocaleDateString();
+          var rating = normalizeRating(review.rating);
+          meta.textContent = (review.author || "Traveler") + " | " + dateText + " | " + rating.toFixed(1) + " " + buildStars(rating);
+
+          var text = document.createElement("p");
+          text.className = "mt-1 text-sm leading-6 text-slate-700";
+          text.textContent = review.text || "";
+
+          item.appendChild(meta);
+          item.appendChild(text);
+          reviewsContainer.appendChild(item);
+        });
+      }
+
+      function renderCommunity() {
+        renderVotes();
+        renderRatingSummary();
+        renderReviews();
+        renderContributorStats();
+      }
+
+      function loadReviewsFromBackend() {
+        fetch(apiUrl("/api/reviews?itineraryKey=" + encodeURIComponent(key)))
+          .then(function (response) {
+            return response.json().catch(function () { return {}; }).then(function (data) {
+              if (!response.ok) {
+                throw new Error(String((data && data.error) || "Failed to load reviews."));
+              }
+              return data;
+            });
+          })
+          .then(function (data) {
+            var rows = Array.isArray(data && data.reviews) ? data.reviews : [];
+            currentFeedback.reviews = rows.map(function (review) {
+              return {
+                author: String((review && review.authorName) || "Traveler"),
+                text: String((review && review.reviewText) || ""),
+                rating: normalizeRating(review && review.rating),
+                date: String((review && review.createdAt) || "")
+              };
+            });
+            renderCommunity();
+          })
+          .catch(function () {});
+      }
+
+      renderCommunity();
+      loadReviewsFromBackend();
+
+      upvoteBtn.addEventListener("click", function () {
+        if (currentFeedback.voted) {
+          currentFeedback.voted = false;
+          currentFeedback.score = Math.max(0, Number(currentFeedback.score || 0) - 1);
+        } else {
+          currentFeedback.voted = true;
+          currentFeedback.score = Number(currentFeedback.score || 0) + 1;
+        }
+        saveFeedbackState(feedbackState);
+        renderCommunity();
+      });
+
+      reviewForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var text = String(reviewText.value || "").trim();
+        if (!text) return;
+        var author = String((reviewName && reviewName.value) || "").trim() || "Traveler";
+        var rating = normalizeRating(reviewRating ? reviewRating.value : 5);
+        fetch(apiUrl("/api/reviews"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            itineraryKey: key,
+            authorName: author.slice(0, 40),
+            reviewText: text.slice(0, 500),
+            rating: rating
+          })
+        })
+          .then(function (response) {
+            return response.json().catch(function () { return {}; }).then(function (data) {
+              if (!response.ok) {
+                throw new Error(String((data && data.error) || "Failed to submit review."));
+              }
+              return data;
+            });
+          })
+          .then(function () {
+            reviewForm.reset();
+            if (reviewRating) reviewRating.value = "5";
+            loadReviewsFromBackend();
+          })
+          .catch(function () {});
+      });
+
+      planJourneyBtn.addEventListener("click", function () {
+        bookingSidebar.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      maximizeBtn.addEventListener("click", function () {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+          return;
+        }
+        if (heroSection.requestFullscreen) {
+          heroSection.requestFullscreen();
+        }
+      });
+
+      if (couponCopyBtns.length) {
+        couponCopyBtns.forEach(function (button) {
+          button.addEventListener("click", async function () {
+            var code = String(button.getAttribute("data-code") || "").trim();
+            if (!code) return;
+            try {
+              await navigator.clipboard.writeText(code);
+              if (discountCopyStatus) discountCopyStatus.textContent = "Coupon copied: " + code;
+            } catch (error) {
+              if (discountCopyStatus) discountCopyStatus.textContent = "Copy failed. Use code: " + code;
+            }
+          });
+        });
+      }
+
+      if (aiOptimizeForm && aiOptimizeOutput) {
+        aiOptimizeForm.addEventListener("submit", async function (event) {
+          event.preventDefault();
+          var goal = aiOptimizeGoal ? String(aiOptimizeGoal.value || "").trim() : "optimize-budget";
+          var extra = aiOptimizeContext ? String(aiOptimizeContext.value || "").trim() : "";
+          var prompt = [
+            "Optimize this Jammu and Kashmir itinerary:",
+            "Title: " + itinerary.title,
+            "Division: " + itinerary.division,
+            "Type: " + itinerary.type,
+            "Budget: " + itinerary.budget,
+            "Days: " + itinerary.days.join(" | "),
+            "Goal: " + goal,
+            "Safety context: overall " + normalizeRating(safetyOverall).toFixed(1) + "/5, women safety " + normalizeRating(safetyWomen).toFixed(1) + "/5.",
+            "User context: " + (extra || "No extra context."),
+            "Return concise plan with sections: Summary, Day Changes, Budget Changes, Safety Tips."
+          ].join("\n");
+
+          aiOptimizeBtn.disabled = true;
+          aiOptimizeOutput.textContent = "Generating optimized plan...";
+          try {
+            var response = await fetch(apiUrl("/api/chat"), {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                message: prompt,
+                history: [
+                  { role: "user", content: "Help modify Jammu and Kashmir itineraries with budget and safety improvements." }
+                ]
+              })
+            });
+            var data = await response.json().catch(function () { return {}; });
+            if (!response.ok) {
+              aiOptimizeOutput.textContent = data && data.error ? data.error : "Unable to generate optimization right now.";
+            } else {
+              aiOptimizeOutput.textContent = String(data.reply || "No optimization output returned.");
+            }
+          } catch (error) {
+            aiOptimizeOutput.textContent = "Failed to connect AI optimizer. Please try again.";
+          } finally {
+            aiOptimizeBtn.disabled = false;
+          }
+        });
+      }
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

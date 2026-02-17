@@ -1,0 +1,783 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TripTales is a smart tourism platform focused on Jammu and Kashmir itineraries, AI planning, and responsible travel." />
+  <title>About | TripTales</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f7fb;
+      --surface: #ffffff;
+      --surface-2: #f8fbff;
+      --text: #102236;
+      --muted: #4a6278;
+      --brand: #0d8ed9;
+      --brand-2: #1ab39a;
+      --line: #d9e6f2;
+      --shadow: 0 14px 34px rgba(12, 35, 61, 0.12);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Inter", Arial, sans-serif;
+      background: radial-gradient(circle at top, rgba(52, 152, 219, 0.08), transparent 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--surface) 82%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      font-size: 1.1rem;
+    }
+
+    .brand img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .brand-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+      display: inline-block;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 4px;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--brand);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 66vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(8, 26, 44, 0.72), rgba(6, 31, 54, 0.52)),
+        radial-gradient(circle at 20% 20%, rgba(13, 142, 217, 0.42), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(26, 179, 154, 0.30), transparent 46%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, var(--bg));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      padding: 72px 0;
+      color: #f5fbff;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.9rem);
+      line-height: 1.12;
+      letter-spacing: 0.2px;
+    }
+
+    .hero p {
+      margin: 16px auto 0;
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      max-width: 700px;
+      color: #dceeff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: color-mix(in srgb, var(--line) 78%, white 22%);
+      color: var(--text);
+    }
+
+    .hero .btn-primary { margin-top: 28px; }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .mission-copy {
+      padding: 34px;
+    }
+
+    .mission-copy p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .mission-media {
+      min-height: 360px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: var(--surface-2);
+    }
+
+    .mission-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mission-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(4, 16, 29, 0.40), transparent 50%);
+    }
+
+    .feature-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      padding: 20px;
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--brand) 46%, var(--line));
+      box-shadow: 0 18px 36px rgba(11, 47, 78, 0.16);
+    }
+
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--brand) 20%, transparent), color-mix(in srgb, var(--brand-2) 20%, transparent));
+      border: 1px solid color-mix(in srgb, var(--brand) 25%, var(--line));
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      margin: 0;
+      font-size: 1.04rem;
+    }
+
+    .feature-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .jk-banner {
+      margin: 14px 0;
+      border-radius: calc(var(--radius) + 2px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      position: relative;
+      min-height: 390px;
+      background:
+        linear-gradient(130deg, rgba(4, 19, 33, 0.78), rgba(5, 34, 56, 0.50)),
+        url("images/kashmir-collage.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+
+    .jk-content {
+      padding: 36px;
+      max-width: 820px;
+      color: #f4f9ff;
+    }
+
+    .jk-content p {
+      margin: 0 0 18px;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .bullet-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      color: #d5e8fb;
+      font-weight: 500;
+    }
+
+    .bullet-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand-2);
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+    }
+
+    .sustainable-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .sustainable-copy,
+    .sustainable-tips {
+      padding: 26px;
+    }
+
+    .tips-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .tips-list li { margin: 8px 0; }
+
+    .eco-badge {
+      margin-top: 16px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--brand-2) 45%, var(--line));
+      color: color-mix(in srgb, var(--brand-2) 84%, var(--text));
+      background: color-mix(in srgb, var(--brand-2) 13%, transparent);
+      padding: 8px 14px;
+      display: inline-flex;
+    }
+
+    .team-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .team-card {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, color-mix(in srgb, var(--brand) 24%, var(--surface)), color-mix(in srgb, var(--brand-2) 20%, var(--surface)));
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: color-mix(in srgb, var(--brand) 80%, var(--text));
+    }
+
+    .team-card h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .team-card p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 78px 0 82px;
+    }
+
+    .cta-card {
+      padding: 34px;
+    }
+
+    .cta-actions {
+      margin-top: 18px;
+      display: inline-flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: color-mix(in srgb, var(--surface-2) 82%, transparent);
+      padding: 40px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .footer h4 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .footer p,
+    .footer li,
+    .footer a {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 7px;
+    }
+
+    .footer-bottom {
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 980px) {
+      .feature-grid,
+      .team-grid,
+      .grid-2,
+      .sustainable-wrap,
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .bullet-list { grid-template-columns: 1fr; }
+
+      .mission-media { min-height: 290px; }
+    }
+
+    @media (max-width: 760px) {
+      .menu-toggle { display: inline-flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 12px;
+        display: none;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .section { padding: 62px 0; }
+
+      .hero-content { padding: 64px 0; }
+
+      .cta-actions { display: grid; width: 100%; }
+
+      .cta-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">
+        <img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" />
+        <span>TripTales</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>About TripTales</h1>
+        <p>Smart tourism platform for discovering Jammu &amp; Kashmir — plan smarter, travel better.</p>
+        <a href="explore.html" class="btn btn-primary">Explore Itineraries</a>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="impact">
+      <h2 class="section-title">TripTales Snapshot</h2>
+      <p class="section-subtitle">A quick look at what TripTales focuses on for travelers, contributors, and local tourism growth.</p>
+      <div class="feature-grid">
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">20+</div>
+          <h3>Curated Itineraries</h3>
+          <p>Practical route plans across Kashmir and Jammu for different budgets and travel styles.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">AI</div>
+          <h3>Planning Intelligence</h3>
+          <p>Smart support for route clarity, timing decisions, and travel-day optimization.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">100%</div>
+          <h3>Human Review First</h3>
+          <p>Submitted travel plans are reviewed before publishing to reduce low-quality suggestions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="mission">
+      <div class="grid-2">
+        <article class="mission-copy card">
+          <h2 class="section-title">Our Mission</h2>
+          <p>
+            TripTales aims to simplify travel planning for Jammu &amp; Kashmir by combining local knowledge, technology, and curated itineraries. We help travelers discover authentic experiences while supporting sustainable and responsible tourism.
+          </p>
+        </article>
+        <figure class="mission-media">
+          <img src="images/kashmir-valley.jpg" alt="Kashmir valley landscape" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="offerings">
+      <h2 class="section-title">What We Offer</h2>
+      <p class="section-subtitle">Built for modern travelers who want trusted planning tools, practical insights, and better travel decisions across Jammu &amp; Kashmir.</p>
+      <div class="feature-grid">
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">AI</div>
+          <h3>AI Trip Planning</h3>
+          <p>Personalized recommendations based on budget, duration, and travel style.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">TR</div>
+          <h3>Curated Itineraries</h3>
+          <p>From budget journeys to premium escapes, mapped clearly for easy selection.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">VD</div>
+          <h3>Verified Information</h3>
+          <p>All itinerary submissions are admin-reviewed before being published.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">BK</div>
+          <h3>Affiliate Booking</h3>
+          <p>Quick access to stays, transport, and activities through partner links.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">RV</div>
+          <h3>Community Reviews</h3>
+          <p>Upvotes and traveler feedback help surface practical itinerary choices.</p>
+        </article>
+        <article class="feature-card card">
+          <div class="feature-icon" aria-hidden="true">LC</div>
+          <h3>Local Experiences</h3>
+          <p>Discover guides, traditions, and culture-forward routes beyond typical tours.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="why-jk">
+      <div class="jk-banner">
+        <div class="jk-content">
+          <h2 class="section-title">Why Jammu &amp; Kashmir</h2>
+          <p>From snow-covered peaks to serene lakes, Jammu &amp; Kashmir offers unforgettable journeys in every season.</p>
+          <ul class="bullet-list">
+            <li>Adventure tourism</li>
+            <li>Cultural heritage</li>
+            <li>Spiritual destinations</li>
+            <li>Nature &amp; photography</li>
+            <li>Winter sports</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="sustainable">
+      <div class="sustainable-wrap">
+        <article class="sustainable-copy card">
+          <h2 class="section-title">Responsible &amp; Sustainable Travel</h2>
+          <p class="section-subtitle">
+            TripTales encourages mindful travel choices that respect local communities, preserve natural landscapes, and build long-term value for Jammu &amp; Kashmir tourism.
+          </p>
+          <button class="eco-badge" type="button">Eco-Friendly Travel Tips</button>
+        </article>
+        <article class="sustainable-tips card">
+          <h3>Travel Tips</h3>
+          <ul class="tips-list">
+            <li>Respect local culture and traditions.</li>
+            <li>Support local businesses and guides.</li>
+            <li>Reduce plastic usage.</li>
+            <li>Travel eco-friendly when possible.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="team">
+      <h2 class="section-title">Built for the Future of Smart Tourism</h2>
+      <p class="section-subtitle">
+        TripTales was created as an innovative digital tourism solution to make travel planning simpler, smarter, and more accessible. Our goal is to empower travelers while promoting responsible tourism in Jammu &amp; Kashmir.
+      </p>
+      <div class="team-grid">
+        <article class="team-card card">
+          <div class="avatar">TT</div>
+          <h4>Product Team</h4>
+          <p>Designing intuitive tools for trip planning and discovery.</p>
+        </article>
+        <article class="team-card card">
+          <div class="avatar">TT</div>
+          <h4>Engineering Team</h4>
+          <p>Building reliable and scalable tourism experiences.</p>
+        </article>
+        <article class="team-card card">
+          <div class="avatar">TT</div>
+          <h4>Research Team</h4>
+          <p>Curating local insights and authentic travel recommendations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta container reveal">
+      <article class="cta-card card">
+        <h2 class="section-title">Start Your Journey Today</h2>
+        <p class="section-subtitle" style="margin-inline:auto;">Discover trusted itineraries and plan the right Jammu &amp; Kashmir trip with clarity.</p>
+        <div class="cta-actions">
+          <a href="explore.html" class="btn btn-primary">Explore Itineraries</a>
+          <a href="create-itinerary.html" class="btn btn-secondary">Plan Your Trip</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section container reveal" id="faq">
+      <h2 class="section-title">Quick FAQ</h2>
+      <div class="feature-grid">
+        <article class="feature-card card">
+          <h3>Is TripTales only for Jammu &amp; Kashmir?</h3>
+          <p>Yes. The platform is focused on Jammu &amp; Kashmir itineraries and local travel planning needs.</p>
+        </article>
+        <article class="feature-card card">
+          <h3>Can I submit my own itinerary?</h3>
+          <p>Yes. You can submit plans through the create page, and they are reviewed before publishing.</p>
+        </article>
+        <article class="feature-card card">
+          <h3>Are booking links direct?</h3>
+          <p>Yes. Itinerary pages include direct links for hotels, transport, activities, and guides.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section>
+          <a class="brand" href="index.html">
+            <img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" />
+            <span>TripTales</span>
+          </a>
+          <p style="margin-top:10px;">Smart tourism planning for Jammu &amp; Kashmir.</p>
+        </section>
+        <section>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="admin.html">Admin</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Contact</h4>
+          <p>Email: hello@triptales.local</p>
+          <p>Support: +91-00000-00000</p>
+          <p>Location: Jammu &amp; Kashmir</p>
+        </section>
+      </div>
+      <p class="footer-bottom">&copy; 2026 TripTales. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var menuToggle = document.getElementById("menuToggle");
+      var navLinks = document.getElementById("navLinks");
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+          var open = navLinks.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      }
+
+      var revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach(function (el) { obs.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add("visible"); });
+      }
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
+

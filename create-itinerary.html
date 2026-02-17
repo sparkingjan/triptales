@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a custom itinerary on TripTales." />
+  <title>Create Itinerary | TripTales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container">
+      <a class="brand" href="index.html"><img src="images/WhatsApp_Image_2026-02-01_at_12.43.06_PM-removebg-preview.png" alt="TripTales logo" /><span>TripTales</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="section-head reveal">
+      <h1>Create Itinerary</h1>
+      <p>Build itinerary drafts with planning intelligence and submit verified trip plans for review.</p>
+    </section>
+
+    <section class="tools-grid reveal" id="smart-planning">
+      <article class="card">
+        <h2>Itinerary Builder</h2>
+        <p>Create the base itinerary record before admin verification.</p>
+        <form class="tool-form" id="createItineraryForm">
+          <label>Itinerary Title<input type="text" name="title" placeholder="e.g. Kashmir Weekend Escape" required /></label>
+          <label>Route<input type="text" name="route" placeholder="e.g. Srinagar - Gulmarg - Pahalgam" required /></label>
+          <label>Duration<input type="text" name="duration" placeholder="e.g. 4 Days" required /></label>
+          <label>Budget<input type="text" name="budget" placeholder="e.g. INR 25,000" required /></label>
+          <label>Highlights<textarea rows="4" name="highlights" placeholder="Key places and activities..." required></textarea></label>
+
+          <section class="itinerary-proof" aria-label="Trip proof verification">
+            <h3>Trip Proof Verification</h3>
+            <p>Turn on location and capture a live photo before submitting the itinerary.</p>
+
+            <div class="proof-controls">
+              <button type="button" class="btn" id="enableLocationBtn">Turn On Location</button>
+              <span class="status-line" id="locationProofStatus">Location not verified yet.</span>
+            </div>
+
+            <div class="camera-panel">
+              <video id="itineraryCameraPreview" class="camera-preview hidden" autoplay playsinline muted></video>
+              <img id="itineraryCapturedPreview" class="camera-preview hidden" alt="Captured itinerary proof" />
+              <div class="camera-fallback" id="cameraFallbackHint">Camera preview will appear here after you open the camera.</div>
+              <canvas id="itineraryCaptureCanvas" class="hidden"></canvas>
+            </div>
+
+            <div class="proof-controls proof-controls-wrap">
+              <button type="button" class="btn" id="startCameraBtn">Open Camera</button>
+              <button type="button" class="btn" id="capturePhotoBtn" disabled>Capture Photo</button>
+              <button type="button" class="btn hidden" id="retakePhotoBtn">Retake</button>
+              <button type="button" class="btn btn-primary" id="uploadCapturedPhotoBtn" disabled>Upload Photo</button>
+            </div>
+            <p class="status-line" id="photoProofStatus">No photo uploaded yet.</p>
+
+            <input type="hidden" id="locationLatitudeInput" name="locationLatitude" />
+            <input type="hidden" id="locationLongitudeInput" name="locationLongitude" />
+            <input type="hidden" id="capturedPhotoInput" name="capturedPhotoDataUrl" />
+          </section>
+
+          <button class="btn btn-primary" type="submit">Submit Itinerary</button>
+          <p id="createItineraryStatus" class="status-line"></p>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2>AI Drafting with Hallucination Shields</h2>
+        <p>Generate structured drafts with confidence markers for admin/community validation.</p>
+        <form class="tool-form mini-form" data-output="draftOutput">
+          <label>Trip Goal<input type="text" placeholder="e.g., 4-day offbeat trek with local culture" /></label>
+          <label>Target Division<select><option>Any Division</option><option>Kashmir</option><option>Jammu</option></select></label>
+          <label>Trip Length (Days)<input type="number" min="1" value="5" /></label>
+          <button class="btn btn-primary" type="submit">Draft with Shields</button>
+        </form>
+        <p id="draftOutput" class="status-line">Draft output will include uncertainty flags and verification queue labels.</p>
+      </article>
+
+      <article class="card">
+        <h2>Ancestry-Linked Itineraries</h2>
+        <p>Blend verified heritage clues with local historical context and route feasibility.</p>
+        <form class="tool-form mini-form" data-output="heritageOutput">
+          <label>Heritage Clue<input type="text" placeholder="e.g., Kashmiri Pandit roots from Anantnag" /></label>
+          <label>Trip Style<select><option>Heritage-focused</option><option>Balanced</option></select></label>
+          <button class="btn btn-primary" type="submit">Generate Heritage Route</button>
+        </form>
+        <p id="heritageOutput" class="status-line">Heritage itinerary suggestions will appear with local context notes.</p>
+      </article>
+
+      <article class="card">
+        <h2>Dynamic Pricing with Verified Local Partners</h2>
+        <p>Forecast realistic costs from local vendors and prepare lockable offer windows.</p>
+        <form class="tool-form mini-form" data-output="pricingOutput">
+          <label>Destination<input type="text" placeholder="e.g., Dal Lake, Gulmarg" /></label>
+          <label>Service Type<select><option>Stay / Houseboat</option><option>Transport</option><option>Activities</option></select></label>
+          <label>Demand Window<select><option>Normal</option><option>Peak</option></select></label>
+          <button class="btn btn-primary" type="submit">Get Forecast + Lock Option</button>
+        </form>
+        <p id="pricingOutput" class="status-line">Price range forecasts and lock tokens will appear here.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
