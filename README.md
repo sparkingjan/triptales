@@ -22,4 +22,4 @@ The chatbot is project-scoped. It is designed to answer only TripTales/Jammu & K
 2. Start the backend:
    `uvicorn backend.app:app --host 127.0.0.1 --port 8000 --reload`
 3. Open:
-   `http://127.0.0.1:8000`
+   `https://triptales-wvb8.onrender.com`
