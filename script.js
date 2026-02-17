@@ -55,16 +55,16 @@
 
   function getApiBase() {
     if (window.location.protocol === "file:") {
-      return "http://127.0.0.1:8000";
+      return "https://triptales-wvb8.onrender.com";
     }
     var host = String(window.location.hostname || "").toLowerCase();
     var port = String(window.location.port || "");
     var localHost = host === "localhost" || host === "127.0.0.1";
     if (localHost && port && port !== "8000") {
-      return "http://127.0.0.1:8000";
+      return "https://triptales-wvb8.onrender.com";
     }
     if (!host) {
-      return "http://127.0.0.1:8000";
+      return "https://triptales-wvb8.onrender.com";
     }
     return "";
   }
