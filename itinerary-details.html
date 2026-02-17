@@ -277,12 +277,12 @@
   <script>
     (function () {
       function getApiBase() {
-        if (window.location.protocol === "file:") return "https://triptales-wvb8.onrender.com";
+        if (window.location.protocol === "file:") return "https://triptales-3.onrender.com";
         var host = String(window.location.hostname || "").toLowerCase();
         var port = String(window.location.port || "");
         var localHost = host === "localhost" || host === "127.0.0.1";
-        if (localHost && port && port !== "8000") return "https://triptales-wvb8.onrender.com";
-        if (!host) return "https://triptales-wvb8.onrender.com";
+        if (localHost && port && port !== "8000") return "https://triptales-3.onrender.com";
+        if (!host) return "https://triptales-3.onrender.com";
         return "";
       }
 
